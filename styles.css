@@ -181,7 +181,7 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   color:var(--paper);
 }
 .hero-roles span:not(.sep){ opacity:0.85; }
-.hero-roles .sep{ margin:0 12px; color:var(--accent); opacity:0.8; }
+.hero-roles .sep{ margin:0 12px; color:var(--accent-soft); opacity:0.8; }
 
 .scrollcue{
   position:absolute; left:50%; bottom:28px; z-index:2;
