@@ -164,6 +164,8 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
 }
 .name-dot{
   font-style:normal;
+  font-size:0.45em;
+  vertical-align:0.08em;
   color:var(--accent);
 }
 .hero-tagline{
