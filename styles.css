@@ -22,6 +22,7 @@
   --paper-faint:#8c6d67;
   --accent:#a1091b;
   --accent-soft:#9c1a2a;
+  --label-accent:#de374b;
   --wine:#4a020c;
   --line:rgba(242,230,220,0.14);
   --line-soft:rgba(242,230,220,0.07);
@@ -83,7 +84,7 @@ h1,h2,h3{
   font-size:0.72rem;
   letter-spacing:0.16em;
   text-transform:uppercase;
-  color:var(--accent-soft);
+  color:var(--label-accent);
 }
 
 .caption{
@@ -273,7 +274,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
 .cluster{ padding-top:20px; }
 .cluster h3{
   font-family:'JetBrains Mono', monospace; font-weight:500; font-size:0.78rem;
-  text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-soft); margin-bottom:16px;
+  text-transform:uppercase; letter-spacing:0.1em; color:var(--label-accent); margin-bottom:16px;
   display:flex; align-items:center; gap:10px;
 }
 .wave{ display:flex; align-items:flex-end; gap:2px; height:14px; }
