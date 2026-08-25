@@ -87,11 +87,12 @@ header.site-nav *{ pointer-events:auto; }
   letter-spacing:0.01em;
 }
 nav.links{
-  display:flex; gap:clamp(14px,2vw,30px);
-  font-family:'JetBrains Mono', monospace;
-  font-size:0.7rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
+  display:flex; gap:clamp(16px,2vw,32px);
+  font-family:'Lora', serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:0.92rem;
+  letter-spacing:0.01em;
 }
 nav.links a{ text-decoration:none; color:var(--paper); opacity:0.72; transition:opacity .25s ease; }
 nav.links a:hover, nav.links a:focus-visible{ opacity:1; }
@@ -127,11 +128,6 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   padding:0 clamp(20px,5vw,64px) clamp(48px,7vw,88px);
   width:100%;
 }
-.hero-eyebrow{
-  display:flex; align-items:center; gap:10px;
-  margin-bottom:clamp(18px,3vw,30px);
-}
-.hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); }
 .hero-name{
   font-size:clamp(3rem, 10vw, 8rem);
   line-height:0.92;
@@ -145,7 +141,7 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
 .hero-tagline{
   margin-top:clamp(18px,3vw,28px);
   max-width:34ch;
-  font-family:'Fraunces', serif;
+  font-family:'Lora', serif;
   font-style:italic;
   font-weight:400;
   font-size:clamp(1.15rem,2.4vw,1.6rem);
@@ -163,15 +159,30 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
 .hero-roles .sep{ margin:0 12px; color:var(--accent); opacity:0.8; }
 
 .scrollcue{
-  position:absolute; right:clamp(20px,5vw,64px); bottom:28px; z-index:2;
-  writing-mode:vertical-rl;
-  font-family:'JetBrains Mono', monospace;
-  font-size:0.68rem;
-  letter-spacing:0.15em;
-  color:var(--paper-dim);
-  display:flex; align-items:center; gap:10px;
+  position:absolute; left:50%; bottom:28px; z-index:2;
+  transform:translateX(-50%);
 }
-.scrollcue .stem{ width:1px; height:46px; background:linear-gradient(var(--paper-dim), transparent); }
+.scroll-mouse{
+  display:block;
+  width:22px; height:36px;
+  border:1.5px solid var(--paper-dim);
+  border-radius:12px;
+  position:relative;
+}
+.scroll-dot{
+  position:absolute; top:6px; left:50%;
+  width:4px; height:8px;
+  margin-left:-2px;
+  border-radius:2px;
+  background:var(--paper-dim);
+  animation:scrollDot 1.6s ease-in-out infinite;
+}
+@keyframes scrollDot{
+  0%{ opacity:1; transform:translateY(0); }
+  70%{ opacity:0; transform:translateY(10px); }
+  100%{ opacity:0; transform:translateY(0); }
+}
+@media (prefers-reduced-motion: reduce){ .scroll-dot{ animation:none; } }
 @media (max-width:640px){ .scrollcue{ display:none; } }
 
 /* ---------- SECTION SCAFFOLD ---------- */
