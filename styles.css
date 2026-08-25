@@ -287,7 +287,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
   align-items:start;
 }
 .tl-row:last-child{ border-bottom:1px solid var(--line); }
-.tl-dot{ width:8px; height:8px; margin-top:10px; border-radius:50%; background:var(--accent); }
+.tl-dot{ width:8px; height:8px; margin-top:10px; border-radius:50%; background:var(--accent-soft); }
 .tl-body h3{ font-size:clamp(1.15rem,2vw,1.4rem); font-weight:500; margin-bottom:8px; }
 .tl-body h3 span{ color:var(--paper-dim); font-family:'Work Sans'; font-weight:400; font-size:0.85em; }
 .tl-body p{ margin:0; color:var(--paper-dim); max-width:60ch; font-size:0.98rem; }
