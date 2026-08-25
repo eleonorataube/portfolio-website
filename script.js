@@ -76,3 +76,21 @@
     if (e.key === 'Escape' && lightbox.classList.contains('open')) close();
   });
 })();
+
+// Accordion for the "Projekti" service categories (Ielūgumi, Plakāti,
+// Soc. tīklu vizuāļi) — each opens independently to reveal its own
+// sorted set of example images.
+(function () {
+  var toggles = document.querySelectorAll('.category-toggle');
+
+  toggles.forEach(function (toggle) {
+    var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      panel.classList.toggle('open', !isOpen);
+    });
+  });
+})();
