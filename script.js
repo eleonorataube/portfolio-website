@@ -77,9 +77,11 @@
   });
 })();
 
-// Accordion for the "Projekti" service categories (Ielūgumi, Plakāti,
-// Sociālo tīklu vizuāļi) — each opens automatically as it scrolls into
-// view, and can still be toggled open/closed by click.
+// Scrollytelling accordion for the "Projekti" categories (Ielūgumi,
+// Plakāti, Sociālo tīklu vizuāļi) — exclusive: as a category's toggle
+// crosses the vertical center of the viewport it becomes the active
+// one, opening slowly while whichever was open before closes. Click
+// still works as a manual override.
 (function () {
   var toggles = document.querySelectorAll('.category-toggle');
   if (!toggles.length) return;
@@ -94,24 +96,35 @@
     var panel = document.getElementById(toggle.getAttribute('aria-controls'));
     if (!panel) return;
     pairs.push({ toggle: toggle, panel: panel });
+  });
 
-    toggle.addEventListener('click', function () {
-      setOpen(toggle, panel, toggle.getAttribute('aria-expanded') !== 'true');
+  function activate(activePair) {
+    pairs.forEach(function (p) { setOpen(p.toggle, p.panel, p === activePair); });
+  }
+
+  pairs.forEach(function (p) {
+    p.toggle.addEventListener('click', function () {
+      var isOpen = p.toggle.getAttribute('aria-expanded') === 'true';
+      activate(isOpen ? null : p);
     });
   });
 
-  if (!('IntersectionObserver' in window)) return;
+  if (!('IntersectionObserver' in window)) {
+    activate(pairs[0]);
+    return;
+  }
 
+  // A thin band across the vertical middle of the viewport — whichever
+  // toggle crosses into it becomes the active category.
   var io = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var pair = pairs.filter(function (p) { return p.toggle === entry.target; })[0];
-        if (pair) setOpen(pair.toggle, pair.panel, true);
-        io.unobserve(entry.target);
+        if (pair) activate(pair);
       });
     },
-    { threshold: 0.5, rootMargin: '0px 0px -10% 0px' }
+    { threshold: 0, rootMargin: '-45% 0px -45% 0px' }
   );
 
   pairs.forEach(function (p) { io.observe(p.toggle); });
