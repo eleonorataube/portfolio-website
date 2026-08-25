@@ -1,5 +1,7 @@
 # Eleonora Taube — Portfolio
 
+**Live site:** https://eleonorataube.github.io/portfolio-website/
+
 A personal portfolio site for Eleonora Taube (PR speciāliste, grafiskā dizainere,
 deju skolotāja, fotogrāfe). Plain HTML/CSS/JS — no build step, no framework.
 Open `index.html` directly, or serve it locally (see below).
@@ -87,12 +89,17 @@ it reads like a curated wall rather than a template gallery.
   page. Swap any of these for higher-resolution originals if she has them —
   these were compressed for a fast first load.
 
+## Deploy
+
+Hosted on **GitHub Pages**, served from the `main` branch root. Pushing to
+`main` republishes the live site automatically — no build step, no CI config.
+
 ## Ideas for next steps
 
-- Real `<meta property="og:*">` tags + a social preview image, once there's
-  a domain to point them at.
+- Real `<meta property="og:*">` tags + a social preview image, now that
+  there's a live URL to point them at.
 - A contact form (currently just `mailto:` / `tel:` links).
 - Self-host the three Google Fonts if you want to drop the external request
   entirely.
-- Deploy: this is static, so Netlify, Vercel, GitHub Pages or Cloudflare
-  Pages all work with zero config — just point them at this folder.
+- A custom domain, if she gets one — GitHub Pages supports this via repo
+  Settings → Pages → Custom domain.
