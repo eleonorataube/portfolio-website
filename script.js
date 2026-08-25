@@ -78,19 +78,41 @@
 })();
 
 // Accordion for the "Projekti" service categories (Ielūgumi, Plakāti,
-// Soc. tīklu vizuāļi) — each opens independently to reveal its own
-// sorted set of example images.
+// Sociālo tīklu vizuāļi) — each opens automatically as it scrolls into
+// view, and can still be toggled open/closed by click.
 (function () {
   var toggles = document.querySelectorAll('.category-toggle');
+  if (!toggles.length) return;
 
+  function setOpen(toggle, panel, open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    panel.classList.toggle('open', open);
+  }
+
+  var pairs = [];
   toggles.forEach(function (toggle) {
     var panel = document.getElementById(toggle.getAttribute('aria-controls'));
     if (!panel) return;
+    pairs.push({ toggle: toggle, panel: panel });
 
     toggle.addEventListener('click', function () {
-      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      panel.classList.toggle('open', !isOpen);
+      setOpen(toggle, panel, toggle.getAttribute('aria-expanded') !== 'true');
     });
   });
+
+  if (!('IntersectionObserver' in window)) return;
+
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var pair = pairs.filter(function (p) { return p.toggle === entry.target; })[0];
+        if (pair) setOpen(pair.toggle, pair.panel, true);
+        io.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.5, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  pairs.forEach(function (p) { io.observe(p.toggle); });
 })();
