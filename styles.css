@@ -8,18 +8,18 @@
   /* --- BORDEAUX TEST PALETTE ---
      Original "gallery wall" palette (near-black ink, brass accent) is
      commented below — swap the two blocks to go back. */
-  --ink:#1b0e11;
-  --ink-rgb:27,14,17;
-  --ink-raised:#241318;
-  --ink-raised-2:#2c171d;
-  --paper:#f0e4dc;
-  --paper-dim:#b89791;
-  --paper-faint:#8a6a65;
-  --accent:#9c2f3e;
-  --accent-soft:#d17b86;
-  --wine:#6e1f2b;
-  --line:rgba(240,228,220,0.14);
-  --line-soft:rgba(240,228,220,0.07);
+  --ink:#180d0c;
+  --ink-rgb:24,13,12;
+  --ink-raised:#221412;
+  --ink-raised-2:#2a1917;
+  --paper:#f2e6dc;
+  --paper-dim:#b99a91;
+  --paper-faint:#8c6d64;
+  --accent:#7d1515;
+  --accent-soft:#c98f89;
+  --wine:#5c0f0f;
+  --line:rgba(242,230,220,0.14);
+  --line-soft:rgba(242,230,220,0.07);
   --shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
 
   /*
