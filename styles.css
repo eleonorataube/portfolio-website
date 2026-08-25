@@ -296,6 +296,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
   border-top:1px solid var(--line);
   align-items:start;
 }
+.tl-row:first-child{ border-top:none; padding-top:0; }
 .tl-dot{ width:8px; height:8px; margin-top:10px; border-radius:50%; background:var(--accent-soft); }
 .tl-body h3{ font-size:clamp(1.15rem,2vw,1.4rem); font-weight:500; margin-bottom:8px; }
 .tl-body h3 span{ color:var(--paper-dim); font-family:'Work Sans'; font-weight:400; font-size:0.85em; }
