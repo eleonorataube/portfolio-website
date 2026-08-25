@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Eleonora Taube — monogram mark
+  Font: Fraunces (italic, weight 500) — https://fonts.google.com/specimen/Fraunces
+  This file uses live <text>, so it only renders correctly where Fraunces is
+  installed or embedded. For print or any tool that won't load web fonts,
+  convert the text to outlines first (Illustrator: Type → Create Outlines,
+  Figma: Text → Outline Stroke / Flatten), or use the exported PNGs instead.
+  Swap fill="#ece4d4" (paper, for dark surfaces) for fill="#141416" (ink, for
+  light surfaces) as needed — bracket color #c99a4c stays the same on both.
+-->
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none">
+    <path d="M 64 104 L 64 64 L 104 64" />
+    <path d="M 296 64 L 336 64 L 336 104" />
+    <path d="M 336 296 L 336 336 L 296 336" />
+    <path d="M 104 336 L 64 336 L 64 296" />
+  </g>
+  <text x="200" y="246" text-anchor="middle"
+        font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500"
+        font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+</svg>

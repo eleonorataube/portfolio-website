@@ -1,0 +1,426 @@
+<title>Eleonora Taube — Brand Guide</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#141416;
+    --ink-raised:#1c1c1f;
+    --ink-raised-2:#232327;
+    --paper:#ece4d4;
+    --paper-dim:#a89d8b;
+    --paper-faint:#726a5d;
+    --accent:#c99a4c;
+    --accent-soft:#e0bb7c;
+    --wine:#8c3b45;
+    --line:rgba(236,228,212,0.14);
+    --line-soft:rgba(236,228,212,0.07);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--ink); color:var(--paper);
+    font-family:'Work Sans', ui-sans-serif, system-ui, sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  ::selection{ background:var(--accent); color:var(--ink); }
+  a{ color:inherit; }
+  img,svg{ max-width:100%; display:block; }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(20px,5vw,64px); }
+
+  h1,h2,h3{ font-family:'Fraunces', Georgia, serif; font-weight:500; margin:0; text-wrap:balance; letter-spacing:-0.01em; }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', ui-monospace, monospace; font-size:0.72rem;
+    letter-spacing:0.16em; text-transform:uppercase; color:var(--accent-soft);
+  }
+  .caption{ font-family:'JetBrains Mono', ui-monospace, monospace; font-size:0.72rem; letter-spacing:0.04em; color:var(--paper-dim); }
+
+  section{ padding:clamp(64px,9vw,120px) 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:24px;
+    margin-bottom:clamp(36px,5vw,56px); border-bottom:1px solid var(--line); padding-bottom:18px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(1.7rem,3.4vw,2.5rem); }
+  .section-index{ font-family:'JetBrains Mono', monospace; font-size:0.75rem; color:var(--paper-faint); letter-spacing:0.08em; }
+  .section-note{ color:var(--paper-dim); max-width:64ch; font-size:1rem; margin:0 0 clamp(32px,4vw,44px); }
+
+  /* ---------- COVER ---------- */
+  .cover{
+    min-height:92svh; display:flex; flex-direction:column; justify-content:center;
+    position:relative; border-bottom:1px solid var(--line);
+  }
+  .cover-badge{ width:88px; height:88px; margin-bottom:clamp(28px,4vw,44px); }
+  .cover h1{
+    font-size:clamp(2.6rem,7vw,5.2rem); line-height:0.98; display:flex; align-items:center; gap:0.35em;
+  }
+  .cover h1 .dot{ width:0.16em; height:0.16em; border-radius:50%; background:var(--accent); flex:none; }
+  .cover .sub{
+    margin-top:clamp(18px,3vw,26px); font-family:'Fraunces', serif; font-style:italic; font-weight:400;
+    font-size:clamp(1.1rem,2.2vw,1.4rem); color:var(--paper-dim); max-width:38ch;
+  }
+  .cover-meta{
+    margin-top:clamp(40px,6vw,64px); display:flex; gap:clamp(24px,4vw,48px); flex-wrap:wrap;
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--paper-faint); letter-spacing:0.06em;
+  }
+
+  /* ---------- LOGO SUITE ---------- */
+  .lockup-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+  @media (max-width:700px){ .lockup-row{ grid-template-columns:1fr; } }
+  .swatch-card{
+    border:1px solid var(--line); padding:clamp(28px,4vw,48px); display:flex; align-items:center; justify-content:center;
+    min-height:180px;
+  }
+  .swatch-card.on-ink{ background:var(--ink-raised); }
+  .swatch-card.on-paper{ background:var(--paper); }
+  .swatch-card .wm{ width:min(360px,80%); }
+  .swatch-card .mono{ width:96px; }
+  .card-label{
+    display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:0.68rem;
+    color:var(--paper-faint); letter-spacing:0.06em; margin-top:10px; padding:0 2px;
+  }
+
+  .clearspace-block{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,56px); margin-top:clamp(40px,5vw,56px); align-items:center; }
+  @media (max-width:760px){ .clearspace-block{ grid-template-columns:1fr; } }
+  .clearspace-diagram{
+    border:1px solid var(--line); background:var(--ink-raised); padding:48px; display:flex; align-items:center; justify-content:center;
+  }
+  .clearspace-diagram .frame{ position:relative; width:180px; height:180px; }
+  .clearspace-diagram .frame .guide{ position:absolute; inset:-24px; border:1px dashed var(--line); }
+  .rule-list{ display:flex; flex-direction:column; gap:16px; }
+  .rule-list .rule{ display:flex; gap:14px; align-items:baseline; }
+  .rule-list .rule .n{ font-family:'Fraunces', serif; font-style:italic; color:var(--accent-soft); font-size:1.1rem; flex:none; width:1.4em; }
+  .rule-list .rule p{ margin:0; color:var(--paper); font-size:0.96rem; }
+  .rule-list .rule p b{ color:var(--paper); font-weight:500; }
+
+  /* ---------- DO/DONT ---------- */
+  .dd-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:860px){ .dd-grid{ grid-template-columns:repeat(2,1fr); } }
+  .dd-card{ border:1px solid var(--line); background:var(--ink-raised); padding:28px; display:flex; flex-direction:column; align-items:center; gap:16px; min-height:170px; justify-content:center; }
+  .dd-card .mono{ width:64px; }
+  .dd-card.bad .mono{ filter:none; }
+  .dd-card .verdict{ font-family:'JetBrains Mono', monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; }
+  .dd-card.bad .verdict{ color:var(--wine); }
+  .dd-card.good .verdict{ color:var(--accent-soft); }
+  .dd-card .why{ font-size:0.78rem; color:var(--paper-dim); text-align:center; margin:0; }
+  .strike{ position:relative; }
+  .strike::after{
+    content:""; position:absolute; left:-14%; right:-14%; top:50%; height:1.5px; background:var(--wine);
+    transform:translateY(-50%) rotate(-18deg);
+  }
+
+  /* ---------- COLOR ---------- */
+  .color-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:860px){ .color-grid{ grid-template-columns:repeat(2,1fr); } }
+  .swatch{ border:1px solid var(--line); }
+  .swatch .fill{ height:110px; }
+  .swatch .meta{ padding:14px 16px 18px; }
+  .swatch .name{ font-weight:500; font-size:0.95rem; }
+  .swatch .hex{ font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:var(--accent-soft); margin-top:4px; }
+  .swatch .use{ font-size:0.8rem; color:var(--paper-dim); margin-top:8px; }
+
+  /* ---------- TYPE ---------- */
+  .type-block{ padding:clamp(28px,4vw,40px) 0; border-top:1px solid var(--line); }
+  .type-block:first-child{ border-top:none; }
+  .type-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px; flex-wrap:wrap; gap:8px; }
+  .type-role{ font-family:'JetBrains Mono', monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-soft); }
+  .type-meta{ font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--paper-faint); }
+  .type-specimen{ color:var(--paper); }
+  .type-specimen.display{ font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-size:clamp(2.2rem,5vw,3.6rem); line-height:1.1; }
+  .type-specimen.body{ font-family:'Work Sans'; font-size:clamp(1.1rem,2vw,1.4rem); max-width:36ch; }
+  .type-specimen.mono{ font-family:'JetBrains Mono', monospace; font-size:clamp(1rem,1.8vw,1.2rem); letter-spacing:0.02em; }
+  .type-sub{ margin-top:10px; color:var(--paper-dim); font-size:0.85rem; max-width:60ch; }
+
+  /* ---------- MOTIF ---------- */
+  .motif-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:860px){ .motif-grid{ grid-template-columns:repeat(2,1fr); } }
+  .motif-card{ border:1px solid var(--line); padding:26px; min-height:150px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; }
+  .motif-demo{ display:flex; align-items:center; justify-content:center; flex:1; }
+  .motif-card .label{ font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--paper-dim); letter-spacing:0.04em; }
+  .demo-dot{ width:14px; height:14px; border-radius:50%; background:var(--accent); }
+  .demo-frame{ width:60px; height:60px; position:relative; }
+  .demo-frame span{ position:absolute; width:16px; height:16px; border:1.4px solid var(--accent); }
+  .demo-frame .tl{ top:0; left:0; border-right:none; border-bottom:none; }
+  .demo-frame .tr{ top:0; right:0; border-left:none; border-bottom:none; }
+  .demo-frame .bl{ bottom:0; left:0; border-right:none; border-top:none; }
+  .demo-frame .br{ bottom:0; right:0; border-left:none; border-top:none; }
+  .demo-rule{ width:100%; height:1px; background:var(--line); position:relative; }
+  .demo-rule::after{ content:""; position:absolute; left:0; top:-1px; width:34%; height:1px; background:var(--accent); }
+  .demo-index{ font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--paper-faint); letter-spacing:0.06em; }
+  .demo-index b{ color:var(--accent-soft); font-weight:500; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:clamp(56px,8vw,88px) 0 60px; }
+  .footer-cta h2{ font-size:clamp(1.9rem,4.4vw,3rem); max-width:16ch; }
+  .footer-cta h2 em{ color:var(--accent-soft); font-style:italic; font-weight:400; }
+  .footer-links{ margin-top:clamp(28px,4vw,40px); display:flex; flex-wrap:wrap; gap:clamp(18px,3vw,36px); }
+  .footer-links a{ text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--paper); border-bottom:1px solid var(--line); padding-bottom:4px; }
+  .footer-links a:hover{ color:var(--accent-soft); border-color:var(--accent); }
+  .footer-bottom{
+    margin-top:clamp(44px,6vw,64px); color:var(--paper-faint); font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.05em;
+  }
+</style>
+
+<main>
+
+  <section class="cover">
+    <div class="wrap">
+      <svg class="cover-badge" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none">
+          <path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" />
+          <path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" />
+        </g>
+        <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+      </svg>
+      <h1><span class="dot"></span>Eleonora Taube</h1>
+      <p class="sub">Stāsti, kas kustas — zīmola pamatelementi vienuviet.</p>
+      <div class="cover-meta">
+        <span>Personal Brand Guide</span>
+        <span>V1 · 2026</span>
+        <span>Rīga, Latvija</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="logo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Logotips</h2>
+        <span class="section-index">01 — Zīme</span>
+      </div>
+      <p class="section-note">Divi elementi: pilnais nosaukuma lockups ikdienas lietošanai un "ET" monogramma īsākiem formātiem — avatāriem, favicon, zīmogveida atzīmēm. Stūru iekavas monogrammā atsaucas uz kadra meklētāju — nod uz fotogrāfiju, kas ir daļa no identitātes.</p>
+
+      <span class="eyebrow">Pilnais lockups</span>
+      <div class="lockup-row" style="margin-top:14px;">
+        <div>
+          <div class="swatch-card on-ink">
+            <svg class="wm" viewBox="0 0 1600 340" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="42" cy="185" r="15" fill="#c99a4c" />
+              <text x="96" y="228" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="400" font-size="211" letter-spacing="-2" fill="#ece4d4">Eleonora Taube</text>
+            </svg>
+          </div>
+          <div class="card-label"><span>uz tumša</span><span>wordmark-paper</span></div>
+        </div>
+        <div>
+          <div class="swatch-card on-paper">
+            <svg class="wm" viewBox="0 0 1600 340" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="42" cy="185" r="15" fill="#c99a4c" />
+              <text x="96" y="228" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="400" font-size="211" letter-spacing="-2" fill="#141416">Eleonora Taube</text>
+            </svg>
+          </div>
+          <div class="card-label"><span>uz gaiša</span><span>wordmark-ink</span></div>
+        </div>
+      </div>
+
+      <span class="eyebrow">Monogramma</span>
+      <div class="lockup-row" style="margin-top:14px;">
+        <div>
+          <div class="swatch-card on-ink">
+            <svg class="mono" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none">
+                <path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" />
+                <path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" />
+              </g>
+              <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+            </svg>
+          </div>
+          <div class="card-label"><span>uz tumša</span><span>monogram-paper</span></div>
+        </div>
+        <div>
+          <div class="swatch-card on-paper">
+            <svg class="mono" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none">
+                <path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" />
+                <path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" />
+              </g>
+              <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#141416">ET</text>
+            </svg>
+          </div>
+          <div class="card-label"><span>uz gaiša</span><span>monogram-ink</span></div>
+        </div>
+      </div>
+
+      <div class="clearspace-block">
+        <div class="clearspace-diagram">
+          <div class="frame">
+            <div class="guide"></div>
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+              <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none">
+                <path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" />
+                <path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" />
+              </g>
+              <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+            </svg>
+          </div>
+        </div>
+        <div class="rule-list">
+          <div class="rule"><span class="n">01</span><p><b>Brīvā telpa:</b> ap monogrammu atstāj vismaz vienas iekavas garumu (redzams ar punktēto līniju) — nekas cits (teksts, malas, cits elements) šajā zonā neienāk.</p></div>
+          <div class="rule"><span class="n">02</span><p><b>Minimālais izmērs:</b> monogramma ne mazāka par 24px / 8mm; pilnais lockups ne šaurāks par 120px platumā — mazāk par to iekavas un "T" serifi sabojājas.</p></div>
+          <div class="rule"><span class="n">03</span><p><b>Fons:</b> vienmēr viengabala tonis — ink (#141416) vai paper (#ece4d4). Foto vai teksta fonā liec tikai ar pietiekamu kontrasta bloku aizmugurē.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="misuse">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Nepareizi lietojumi</h2>
+        <span class="section-index">02 — Robežas</span>
+      </div>
+      <p class="section-note">Zīme paliek pazīstama tikai tad, ja paliek nemainīga. Šie ir biežākie veidi, kā tā tiek sabojāta.</p>
+      <div class="dd-grid">
+        <div class="dd-card bad">
+          <svg class="mono strike" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="transform:scaleX(1.6);">
+            <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none"><path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" /><path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" /></g>
+            <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+          </svg>
+          <span class="verdict">Nestiepj</span>
+          <p class="why">Proporcijas ir fiksētas — nekad nemaini platumu/augstumu atsevišķi.</p>
+        </div>
+        <div class="dd-card bad">
+          <svg class="mono strike" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(14deg);">
+            <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none"><path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" /><path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" /></g>
+            <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+          </svg>
+          <span class="verdict">Nepagriež</span>
+          <p class="why">Iekavas ir taisnas — leņķis tās pārvērš par nejaušu formu.</p>
+        </div>
+        <div class="dd-card bad">
+          <svg class="mono strike" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(6px 8px 0 #8c3b45);">
+            <g stroke="#c99a4c" stroke-width="6.4" stroke-linecap="square" fill="none"><path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" /><path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" /></g>
+            <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#ece4d4">ET</text>
+          </svg>
+          <span class="verdict">Bez ēnas</span>
+          <p class="why">Nav malu, spīduma vai 3D efektu — zīme paliek plakana.</p>
+        </div>
+        <div class="dd-card bad">
+          <svg class="mono strike" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#8c3b45" stroke-width="6.4" stroke-linecap="square" fill="none"><path d="M 64 104 L 64 64 L 104 64" /><path d="M 296 64 L 336 64 L 336 104" /><path d="M 336 296 L 336 336 L 296 336" /><path d="M 104 336 L 64 336 L 64 296" /></g>
+            <text x="200" y="246" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="184" letter-spacing="-8" fill="#726a5d">ET</text>
+          </svg>
+          <span class="verdict">Nemaina krāsas</span>
+          <p class="why">Tikai paletē noteiktās kombinācijas — ne patvaļīgas krāsas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="color">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Krāsas</h2>
+        <span class="section-index">03 — Palete</span>
+      </div>
+      <p class="section-note">Tumšs pamats ar siltu, nevis tīri melnu, toni — kā apgaismota galerijas siena. Vienas krāsas paletē pietiek gan foto, gan dizaina darbiem, lai tie justos vienoti.</p>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="fill" style="background:#141416;"></div>
+          <div class="meta"><div class="name">Ink</div><div class="hex">#141416</div><div class="use">Pamata fons</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#1c1c1f;"></div>
+          <div class="meta"><div class="name">Ink Raised</div><div class="hex">#1c1c1f</div><div class="use">Kartītes, paneļi</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#ece4d4;"></div>
+          <div class="meta"><div class="name">Paper</div><div class="hex">#ece4d4</div><div class="use">Pamata teksts</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#a89d8b;"></div>
+          <div class="meta"><div class="name">Paper Dim</div><div class="hex">#a89d8b</div><div class="use">Sekundārs teksts</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#726a5d;"></div>
+          <div class="meta"><div class="name">Paper Faint</div><div class="hex">#726a5d</div><div class="use">Indeksi, numuri</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#c99a4c;"></div>
+          <div class="meta"><div class="name">Accent</div><div class="hex">#c99a4c</div><div class="use">Akcenti, punkti, iekavas</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#e0bb7c;"></div>
+          <div class="meta"><div class="name">Accent Soft</div><div class="hex">#e0bb7c</div><div class="use">Akcents uz teksta, saites</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:#8c3b45;"></div>
+          <div class="meta"><div class="name">Wine</div><div class="hex">#8c3b45</div><div class="use">Rezervēts — kļūdas, "nepareizi"</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="type">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tipogrāfija</h2>
+        <span class="section-index">04 — Balsis</span>
+      </div>
+      <p class="section-note">Trīs fonti, trīs lomas — nekad nesajaucas. Visi trīs no Google Fonts, brīvi pieejami.</p>
+
+      <div class="type-block">
+        <div class="type-head"><span class="type-role">Displejs — virsraksti, citāti</span><span class="type-meta">Fraunces · italic 400–500</span></div>
+        <p class="type-specimen display">Stāsti, kas kustas.</p>
+        <p class="type-sub">Lieto virsrakstiem, vārda logotipam un īsiem izceltiem teikumiem. Vienmēr slīprakstā — tas ir zīmola "balss tonis".</p>
+      </div>
+      <div class="type-block">
+        <div class="type-head"><span class="type-role">Pamatteksts</span><span class="type-meta">Work Sans · 400–500</span></div>
+        <p class="type-specimen body">Šī ir pamatteksta rindkopa — pārbaudei ar garumzīmēm un mīkstinājuma zīmēm: āčēģīķļņšūž, ĀČĒĢĪĶĻŅŠŪŽ.</p>
+        <p class="type-sub">Lieto visam garākam tekstam — aprakstiem, CV ierakstiem, e-pastiem.</p>
+      </div>
+      <div class="type-block">
+        <div class="type-head"><span class="type-role">Uzraksti, dati, navigācija</span><span class="type-meta">JetBrains Mono · 400–500</span></div>
+        <p class="type-specimen mono">01 — RĪGA, LATVIJA — 29600609</p>
+        <p class="type-sub">Lieto mazām, ar lielo burtu un plašu burtu atstarpi rakstītām etiķetēm — datumiem, sadaļu numuriem, kontaktinformācijai.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="motif">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Motīvs</h2>
+        <span class="section-index">05 — Atkārtojošies elementi</span>
+      </div>
+      <p class="section-note">Mazas detaļas, kas nesa identitāti tālāk par logotipu — atkārto tās, un jebkas sāk izskatīties "tavs".</p>
+      <div class="motif-grid">
+        <div class="motif-card">
+          <div class="motif-demo"><div class="demo-dot"></div></div>
+          <span class="label">Akcenta punkts</span>
+        </div>
+        <div class="motif-card">
+          <div class="motif-demo">
+            <div class="demo-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+          </div>
+          <span class="label">Kadra iekavas</span>
+        </div>
+        <div class="motif-card">
+          <div class="motif-demo" style="width:100%;"><div class="demo-rule"></div></div>
+          <span class="label">Plāna līnija ar akcentu</span>
+        </div>
+        <div class="motif-card">
+          <div class="motif-demo"><span class="demo-index">Nr. <b>04</b> — kadrs</span></div>
+          <span class="label">Numurēts indekss</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-cta">
+        <span class="eyebrow">06 — Sarunai</span>
+        <h2 style="margin-top:12px;">Viena identitāte — <em>sapnis, portfolio, vizītkarte</em>.</h2>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:taubeeleonora@gmail.com">taubeeleonora@gmail.com</a>
+        <a href="tel:+37129600609">+371 29600609</a>
+        <a href="https://linkedin.com/in/eleonorataube" target="_blank" rel="noopener">linkedin.com/in/eleonorataube</a>
+      </div>
+      <div class="footer-bottom">Eleonora Taube — Personal Brand Guide · V1, 2026</div>
+    </div>
+  </footer>
+
+</main>

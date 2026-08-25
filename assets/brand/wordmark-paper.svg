@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Eleonora Taube — wordmark
+  Font: Fraunces (italic, weight 400) — https://fonts.google.com/specimen/Fraunces
+  This file uses live <text>, so it only renders correctly where Fraunces is
+  installed or embedded. For print or any tool that won't load web fonts,
+  convert the text to outlines first (Illustrator: Type → Create Outlines,
+  Figma: Text → Outline Stroke / Flatten), or use the exported PNGs instead.
+  Swap fill="#ece4d4" (paper, for dark surfaces) for fill="#141416" (ink, for
+  light surfaces) as needed — dot color #c99a4c stays the same on both.
+-->
+<svg width="1600" height="340" viewBox="0 0 1600 340" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="42" cy="185" r="15" fill="#c99a4c" />
+  <text x="96" y="228" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="400"
+        font-size="211" letter-spacing="-2" fill="#ece4d4">Eleonora Taube</text>
+</svg>
