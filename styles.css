@@ -162,6 +162,10 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   font-weight:400;
   color:var(--accent-soft);
 }
+.name-dot{
+  font-style:normal;
+  color:var(--accent);
+}
 .hero-tagline{
   margin-top:clamp(18px,3vw,28px);
   max-width:34ch;
