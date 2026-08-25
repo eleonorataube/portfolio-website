@@ -314,7 +314,19 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
 }
 @media (max-width:760px){ .side-notes{ grid-template-columns:1fr; } }
 .note{ padding:18px 0; border-top:1px solid var(--line); }
-.note .eyebrow{ margin-bottom:8px; }
+.note .eyebrow{
+  display:block;
+  font-family:'Lora', Georgia, serif;
+  font-weight:500;
+  font-size:1rem;
+  letter-spacing:normal;
+  text-transform:none;
+  color:var(--paper);
+  background:none;
+  padding:0;
+  border-radius:0;
+  margin-bottom:8px;
+}
 .note p{ margin:0; color:var(--paper-dim); font-size:0.92rem; }
 
 /* ---------- SERVICE CATEGORIES (accordion) ---------- */
