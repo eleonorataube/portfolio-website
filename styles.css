@@ -256,14 +256,6 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
   margin:0 0 1.3em;
 }
 .about-copy p:first-of-type{ font-family:'Lora', serif; font-weight:500; font-size:clamp(1.3rem,2.2vw,1.7rem); color:var(--paper); line-height:1.45; }
-.about-copy .signoff{
-  margin-top:2em;
-  font-family:'JetBrains Mono', monospace;
-  font-size:0.78rem;
-  color:var(--paper-dim);
-  letter-spacing:0.03em;
-}
-.about-copy .signoff strong{ color:var(--accent-soft); font-weight:500; }
 
 /* ---------- SKILLS ---------- */
 .skill-clusters{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,36px); }
