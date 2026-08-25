@@ -24,6 +24,28 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 
+// Nav background — solid page-background color once the hero has been
+// scrolled past, instead of the mix-blend-mode trick that only reads
+// correctly over the photo.
+(function () {
+  var nav = document.querySelector('header.site-nav');
+  var hero = document.querySelector('.hero');
+  if (!nav || !hero) return;
+
+  if (!('IntersectionObserver' in window)) return;
+
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        nav.classList.toggle('scrolled', !entry.isIntersecting);
+      });
+    },
+    { threshold: 0, rootMargin: '-72px 0px 0px 0px' }
+  );
+
+  io.observe(hero);
+})();
+
 // Lightbox for the "Projekti" gallery — click (or Enter/Space) a frame to
 // see the full image and its caption; Escape, the close button, or a click
 // outside the image closes it.
