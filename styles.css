@@ -278,7 +278,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
   display:flex; align-items:center; gap:10px;
 }
 .wave{ display:flex; align-items:flex-end; gap:2px; height:14px; }
-.wave i{ width:2px; background:var(--paper); opacity:.75; display:block; border-radius:1px; }
+.wave i{ width:2px; background:var(--paper-dim); opacity:.75; display:block; border-radius:1px; }
 .chip-list{ display:flex; flex-direction:column; gap:9px; }
 .chip-list li{
   list-style:none; font-size:0.97rem; color:var(--paper);
