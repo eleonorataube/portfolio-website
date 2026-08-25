@@ -382,7 +382,6 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
 .fcap .ftitle{ font-family:'Work Sans'; font-size:0.85rem; color:var(--paper); font-weight:500; }
 
 .gallery-note{ margin-top:18px; color:var(--paper-faint); font-size:0.85rem; max-width:60ch; }
-#darbi .gallery-note{ margin-top:0; margin-bottom:clamp(32px,5vw,48px); }
 
 /* ---------- EDU / LANG ---------- */
 .lower-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(32px,6vw,80px); }
