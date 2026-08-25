@@ -285,8 +285,6 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
   color:var(--paper); background:var(--accent);
   padding:4px 10px; border-radius:3px;
 }
-.wave{ display:flex; align-items:flex-end; gap:2px; height:14px; }
-.wave i{ width:2px; background:var(--paper-dim); opacity:.75; display:block; border-radius:1px; }
 .chip-list{ display:flex; flex-direction:column; gap:9px; }
 .chip-list li{
   list-style:none; font-size:0.97rem; color:var(--paper);
