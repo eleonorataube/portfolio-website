@@ -8,20 +8,21 @@
    ========================================================================== */
 
 :root{
-  /* --- BORDEAUX TEST PALETTE ---
-     Original "gallery wall" palette (near-black ink, brass accent) is
-     commented below - swap the two blocks to go back. */
-  --ink:#180d0c;
-  --ink-rgb:24,13,12;
+  /* --- PALETTE, sampled from the "Par mani" portrait backdrop ---
+     (averaged photo red ~rgb(161,9,27)). Original "gallery wall"
+     palette (near-black ink, brass accent) is commented below - swap
+     the two blocks to go back. */
+  --ink:#150407;
+  --ink-rgb:21,4,7;
   --scrim-rgb:16,16,16;
-  --ink-raised:#221412;
-  --ink-raised-2:#2a1917;
+  --ink-raised:#200a0d;
+  --ink-raised-2:#2a0f12;
   --paper:#f2e6dc;
-  --paper-dim:#b99a91;
-  --paper-faint:#8c6d64;
-  --accent:#7d1515;
-  --accent-soft:#c98f89;
-  --wine:#5c0f0f;
+  --paper-dim:#b99a95;
+  --paper-faint:#8c6d67;
+  --accent:#a1091b;
+  --accent-soft:#c76b76;
+  --wine:#4a020c;
   --line:rgba(242,230,220,0.14);
   --line-soft:rgba(242,230,220,0.07);
   --shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
