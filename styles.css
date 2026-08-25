@@ -22,7 +22,6 @@
   --paper-faint:#8c6d67;
   --accent:#a1091b;
   --accent-soft:#9c1a2a;
-  --label-accent:#de374b;
   --wine:#4a020c;
   --line:rgba(242,230,220,0.14);
   --line-soft:rgba(242,230,220,0.07);
@@ -81,10 +80,14 @@ h1,h2,h3{
 
 .eyebrow{
   font-family:'JetBrains Mono', ui-monospace, monospace;
-  font-size:0.72rem;
-  letter-spacing:0.16em;
+  font-size:0.68rem;
+  letter-spacing:0.12em;
   text-transform:uppercase;
-  color:var(--label-accent);
+  color:var(--paper);
+  background:var(--accent);
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:3px;
 }
 
 .caption{
@@ -274,8 +277,13 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
 .cluster{ padding-top:20px; }
 .cluster h3{
   font-family:'JetBrains Mono', monospace; font-weight:500; font-size:0.78rem;
-  text-transform:uppercase; letter-spacing:0.1em; color:var(--label-accent); margin-bottom:16px;
+  margin-bottom:16px;
   display:flex; align-items:center; gap:10px;
+}
+.cluster-label{
+  text-transform:uppercase; letter-spacing:0.1em;
+  color:var(--paper); background:var(--accent);
+  padding:4px 10px; border-radius:3px;
 }
 .wave{ display:flex; align-items:flex-end; gap:2px; height:14px; }
 .wave i{ width:2px; background:var(--paper-dim); opacity:.75; display:block; border-radius:1px; }
@@ -308,7 +316,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
 }
 @media (max-width:760px){ .side-notes{ grid-template-columns:1fr; } }
 .note{ padding:18px 0; border-top:1px solid var(--line); }
-.note .eyebrow{ display:block; margin-bottom:8px; }
+.note .eyebrow{ margin-bottom:8px; }
 .note p{ margin:0; color:var(--paper-dim); font-size:0.92rem; }
 
 /* ---------- SERVICE CATEGORIES (accordion) ---------- */
