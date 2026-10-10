@@ -124,8 +124,9 @@
   });
 })();
 
-// Project image rows: arrow buttons + a progress line, so it's clear the
-// images continue to the side. Only shown when a row actually overflows.
+// Project image rows: arrow buttons, mouse drag and a draggable progress
+// line, so it's clear the images continue to the side. Only shown when a
+// row actually overflows.
 (function () {
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var arrow = function (d) {
@@ -164,6 +165,53 @@
       prev.disabled = strip.scrollLeft <= 2;
       next.disabled = strip.scrollLeft >= max - 2;
     }
+
+    // Drag the images sideways with a mouse (touch already swipes natively).
+    // A drag that moves more than a few pixels doesn't open the lightbox.
+    var drag = null, dragged = false;
+    strip.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0 || block.classList.contains('no-scroll')) return;
+      drag = { x: e.clientX, left: strip.scrollLeft };
+      dragged = false;
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      var dx = e.clientX - drag.x;
+      if (!dragged && Math.abs(dx) > 5) {
+        dragged = true;
+        strip.classList.add('dragging');
+        document.body.classList.add('is-dragging');
+      }
+      if (dragged) strip.scrollLeft = drag.left - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (!drag) return;
+      drag = null;
+      strip.classList.remove('dragging');
+      document.body.classList.remove('is-dragging');
+    });
+    strip.addEventListener('click', function (e) {
+      if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; }
+    }, true);
+    strip.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+    // Drag (or click) the progress line to scrub through the row
+    function scrubTo(clientX) {
+      var r = progress.getBoundingClientRect();
+      var share = strip.clientWidth / strip.scrollWidth;
+      var t = (clientX - r.left - (r.width * share) / 2) / (r.width * (1 - share));
+      strip.scrollLeft = Math.max(0, Math.min(1, t)) * (strip.scrollWidth - strip.clientWidth);
+    }
+    progress.addEventListener('pointerdown', function (e) {
+      try { progress.setPointerCapture(e.pointerId); } catch (err) {}
+      progress.classList.add('scrubbing');
+      scrubTo(e.clientX);
+    });
+    progress.addEventListener('pointermove', function (e) {
+      if (progress.hasPointerCapture(e.pointerId)) scrubTo(e.clientX);
+    });
+    progress.addEventListener('pointerup', function () { progress.classList.remove('scrubbing'); });
+    progress.addEventListener('pointercancel', function () { progress.classList.remove('scrubbing'); });
 
     nav.addEventListener('click', function (e) {
       var btn = e.target.closest('.strip-btn');
