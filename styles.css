@@ -153,7 +153,7 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   opacity:0.65;
 }
 @media (max-width:760px) and (orientation:portrait){
-  .hero-img{ object-position:70% 50%; }
+  .hero-img{ object-position:66% 50%; }
 }
 .hero-scrim{
   position:absolute; inset:0;
