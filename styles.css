@@ -4,7 +4,7 @@
    brass accent. Display headings/copy: Lora (Fraunces distorts Latvian
    macron diacritics - ā/ī/ū - so it's kept only for diacritic-free display
    text: hero name, logo mark, timeline digits). Body: Work Sans. Labels:
-   JetBrains Mono.
+   Work Sans (small caps).
    ========================================================================== */
 
 :root{
@@ -79,7 +79,7 @@ h1,h2,h3{
 }
 
 .eyebrow{
-  font-family:'JetBrains Mono', ui-monospace, monospace;
+  font-family:'Work Sans', system-ui, sans-serif;
   font-size:0.68rem;
   letter-spacing:0.12em;
   text-transform:uppercase;
@@ -91,7 +91,7 @@ h1,h2,h3{
 }
 
 .caption{
-  font-family:'JetBrains Mono', ui-monospace, monospace;
+  font-family:'Work Sans', system-ui, sans-serif;
   font-size:0.7rem;
   letter-spacing:0.04em;
   color:var(--paper-dim);
@@ -125,7 +125,7 @@ header.site-nav *{ pointer-events:auto; }
 }
 nav.links{
   display:flex; gap:clamp(14px,2vw,30px);
-  font-family:'JetBrains Mono', monospace;
+  font-family:'Work Sans', system-ui, sans-serif;
   font-size:0.7rem;
   letter-spacing:0.1em;
   text-transform:uppercase;
@@ -189,7 +189,7 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
 .hero-roles{
   margin-top:clamp(26px,4vw,40px);
   display:flex; flex-wrap:wrap; gap:10px 0;
-  font-family:'JetBrains Mono', monospace;
+  font-family:'Work Sans', system-ui, sans-serif;
   font-size:0.72rem;
   letter-spacing:0.1em;
   text-transform:uppercase;
@@ -236,7 +236,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
   flex-wrap:wrap;
 }
 .section-head h2{ font-size:clamp(1.9rem,4vw,3rem); }
-.section-index{ font-family:'JetBrains Mono', monospace; font-size:0.75rem; color:var(--paper-faint); letter-spacing:0.1em; text-transform:uppercase; }
+.section-index{ font-family:'Work Sans', system-ui, sans-serif; font-size:0.75rem; color:var(--paper-faint); letter-spacing:0.1em; text-transform:uppercase; }
 
 .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .reveal.in{ opacity:1; transform:translateY(0); }
@@ -273,7 +273,7 @@ section.tight{ padding-top:clamp(40px,6vw,72px); }
 @media (max-width:860px){ .skill-clusters{ grid-template-columns:1fr; } }
 .cluster{ padding-top:20px; }
 .cluster h3{
-  font-family:'JetBrains Mono', monospace; font-weight:500; font-size:0.78rem;
+  font-family:'Work Sans', system-ui, sans-serif; font-weight:500; font-size:0.78rem;
   margin-bottom:16px;
   display:flex; align-items:center; gap:10px;
 }
@@ -401,7 +401,7 @@ footer{
   display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,48px);
 }
 .footer-links a{
-  text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:0.85rem;
+  text-decoration:none; font-family:'Work Sans', system-ui, sans-serif; font-size:0.85rem;
   color:var(--paper); border-bottom:1px solid var(--line); padding-bottom:4px;
   transition:border-color .25s ease, color .25s ease;
 }
@@ -409,7 +409,7 @@ footer{
 .footer-bottom{
   margin-top:clamp(56px,8vw,88px);
   display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-  color:var(--paper-faint); font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.05em;
+  color:var(--paper-faint); font-family:'Work Sans', system-ui, sans-serif; font-size:0.68rem; letter-spacing:0.05em;
 }
 
 /* ---------- LIGHTBOX ---------- */
@@ -431,7 +431,7 @@ footer{
 .lightbox.open .lb-img{ transform:scale(1); }
 .lb-cap{ text-align:center; }
 .lb-num{
-  display:block; font-family:'JetBrains Mono', monospace; font-size:0.7rem;
+  display:block; font-family:'Work Sans', system-ui, sans-serif; font-size:0.7rem;
   letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-soft); margin-bottom:6px;
 }
 .lb-title{ font-family:'Lora', serif; font-size:1.1rem; color:var(--paper); }
