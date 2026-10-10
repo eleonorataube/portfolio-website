@@ -174,7 +174,11 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   letter-spacing:0.02em;
   color:rgba(var(--ink-rgb),0.55);
 }
-.hero-down{ display:block; padding:4px; text-decoration:none; }
+.hero-down{
+  position:absolute; left:50%; bottom:clamp(20px,3.5vw,32px); z-index:2;
+  transform:translateX(-50%);
+  display:block; padding:4px; text-decoration:none;
+}
 .scroll-mouse{
   display:block;
   width:22px; height:36px;
@@ -215,7 +219,6 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   .hero-photo{ order:-1; height:52svh; }
   .hero-photo::after{ background:linear-gradient(0deg, var(--paper) 0%, rgba(242,230,220,0.55) 18%, rgba(242,230,220,0) 45%); }
   .hero-panel{ padding-top:clamp(28px,6vw,40px); }
-  .hero-down{ margin-top:40px; }
 }
 
 /* ---------- SECTION SCAFFOLD ---------- */
