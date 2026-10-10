@@ -216,7 +216,7 @@ p{ margin:0; }
 
 /* Hand-written note beside the portrait */
 .note-hand{
-  position:absolute; top:100%; left:0; margin-top:-6px;
+  position:absolute; top:100%; left:0; margin-top:12px;
   display:flex; align-items:flex-start;
   font-family:var(--hand); font-size:1.7rem; line-height:1;
   color:var(--accent);
