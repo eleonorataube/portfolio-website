@@ -211,7 +211,15 @@ p{ margin:0; }
 }
 
 /* ---------- SKILLS ---------- */
-.skills{ padding-block:clamp(40px,6vw,80px) clamp(72px,10vw,140px); }
+/* Dark band, same as the quote and contact */
+.skills{
+  background:var(--ink);
+  color:var(--paper);
+  padding-block:clamp(80px,11vw,150px);
+}
+.skills .skill-row{ border-color:rgba(var(--paper-rgb),0.14); }
+.skills .skill-row li{ color:rgba(var(--paper-rgb),0.82); }
+.skills .skill-row li:not(:last-child)::after{ color:rgba(var(--paper-rgb),0.35); }
 .skills .display{ margin-bottom:clamp(28px,4vw,48px); }
 .skill-rows{ margin:0; }
 .skill-row{
