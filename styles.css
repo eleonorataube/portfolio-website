@@ -189,10 +189,17 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
 .hero-photo img{
   position:absolute; inset:0; width:100%; height:100%;
   object-fit:cover; object-position:64% 50%;
+  opacity:0.88;
+}
+/* Soft beige fade where the photo meets the text panel */
+.hero-photo::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(90deg, var(--paper) 0%, rgba(242,230,220,0.55) 16%, rgba(242,230,220,0) 42%);
 }
 @media (max-width:760px){
   .hero{ grid-template-columns:1fr; grid-template-rows:auto 1fr; }
   .hero-photo{ order:-1; height:52svh; }
+  .hero-photo::after{ background:linear-gradient(0deg, var(--paper) 0%, rgba(242,230,220,0.55) 18%, rgba(242,230,220,0) 45%); }
   .hero-panel{ padding-top:clamp(28px,6vw,40px); }
   .hero-bottom{ margin-top:36px; }
 }
