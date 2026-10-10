@@ -49,7 +49,7 @@ portrait and a signed pull-quote, not decoration.
 **Type.**
 - Everything - [Work Sans]: weight 500 with tight letter-spacing for headings,
   400 for text. Highlighted words use colour, not italics.
-- Hand-written - [Caveat], only for "Sveiki, esmu" in the hero, the two "Eleonora" signatures and the
+- Hand-written - [Caveat], only for "Hey, esmu..." in the hero, the two "Eleonora" signatures and the
   "tā esmu es" note.
 
 **Layout.** Hero is a dark band with the text on the page grid and the photo
