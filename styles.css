@@ -3,7 +3,7 @@
    Design system: "contact sheet" - dark gallery ground, warm bone type,
    brass accent. Display headings/copy: Lora (Fraunces distorts Latvian
    macron diacritics - ā/ī/ū - so it's kept only for diacritic-free display
-   text: hero name, logo mark, timeline digits). Body: Work Sans. Labels:
+   text: logo mark, timeline digits). Body: Work Sans. Labels:
    Work Sans (small caps).
    ========================================================================== */
 
@@ -135,95 +135,76 @@ nav.links a:hover, nav.links a:focus-visible{ opacity:1; }
 nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; }
 @media (max-width:640px){ nav.links{ display:none; } }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO ----------
+   Light "sentence" intro: one big line of copy with small rounded photos
+   set inline like words. Sits on the paper colour so the dark site below
+   reads as a deliberate change of scene. */
 .hero{
   position:relative;
   min-height:100svh;
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
-  overflow:hidden;
-  border-bottom:1px solid var(--line);
+  justify-content:space-between;
+  background:var(--paper);
+  color:var(--ink);
+  padding:clamp(96px,14vh,150px) clamp(20px,5vw,64px) clamp(20px,3vw,32px);
 }
-.hero-img{
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover;
-  object-position:62% 65%;
-  filter:grayscale(1) contrast(1.08);
-  opacity:0.65;
-}
-@media (max-width:760px) and (orientation:portrait){
-  .hero-img{ object-position:66% 50%; }
-}
-.hero-scrim{
-  position:absolute; inset:0;
-  background:
-    linear-gradient(180deg, rgba(var(--scrim-rgb),0.35) 0%, rgba(var(--scrim-rgb),0.6) 45%, var(--ink) 92%),
-    linear-gradient(90deg, rgba(var(--scrim-rgb),0.65) 0%, rgba(var(--scrim-rgb),0.05) 45%);
-}
-.hero-inner{
-  position:relative; z-index:2;
-  padding:0 clamp(20px,5vw,64px) clamp(48px,7vw,88px);
-  width:100%;
-}
-.hero-name{
-  font-family:'Fraunces', Georgia, serif;
-  font-size:clamp(3rem, 10vw, 8rem);
-  line-height:0.92;
-  color:var(--paper);
-}
-.hero-name em{
-  font-style:italic;
-  font-weight:400;
-  color:var(--accent-soft);
-}
-.hero-tagline{
-  margin-top:clamp(18px,3vw,28px);
-  max-width:34ch;
-  font-family:'Lora', serif;
-  font-style:italic;
-  font-weight:400;
-  font-size:clamp(1.15rem,2.4vw,1.6rem);
-  color:var(--paper-dim);
-}
-.hero-roles{
-  margin-top:clamp(26px,4vw,40px);
-  display:flex; flex-wrap:wrap; gap:10px 0;
+.hero ::selection{ background:var(--accent); color:var(--paper); }
+.hero-inner{ margin:auto 0; max-width:1280px; }
+.hero-hello{
+  margin:0 0 clamp(14px,2vw,22px);
   font-family:'Work Sans', system-ui, sans-serif;
-  font-size:0.72rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--paper);
+  font-size:clamp(0.95rem,1.4vw,1.1rem);
+  color:var(--accent);
 }
-.hero-roles span:not(.sep){ opacity:0.85; }
-.hero-roles .sep{ margin:0 12px; color:var(--accent-soft); opacity:0.8; }
-
-.scrollcue{
-  position:absolute; left:50%; bottom:28px; z-index:2;
-  transform:translateX(-50%);
+.hero-sentence{
+  font-family:'Lora', Georgia, serif;
+  font-weight:400;
+  font-size:clamp(2.2rem,8vw,5.4rem);
+  line-height:1.12;
+  letter-spacing:-0.025em;
+  text-wrap:pretty;
+  color:var(--ink);
 }
-.scroll-mouse{
-  display:block;
-  width:22px; height:36px;
-  border:1.5px solid var(--paper-dim);
-  border-radius:12px;
-  position:relative;
-}
-.scroll-dot{
-  position:absolute; top:6px; left:50%;
-  width:4px; height:8px;
-  margin-left:-2px;
-  border-radius:2px;
+.pill{
+  display:inline-block;
+  width:1.7em; height:0.82em;
+  margin:0 0.06em;
+  border-radius:999px;
+  overflow:hidden;
+  vertical-align:-0.06em;
   background:var(--paper-dim);
-  animation:scrollDot 1.6s ease-in-out infinite;
+  transition:width .5s cubic-bezier(.2,.7,.2,1);
+  animation:pillIn .9s cubic-bezier(.2,.7,.2,1) both;
 }
-@keyframes scrollDot{
-  0%{ opacity:1; transform:translateY(0); }
-  70%{ opacity:0; transform:translateY(10px); }
-  100%{ opacity:0; transform:translateY(0); }
+.pill img{ width:100%; height:100%; object-fit:cover; }
+.pill:hover{ width:2.4em; }
+.hero-sentence .pill:nth-of-type(2){ animation-delay:.12s; }
+.hero-sentence .pill:nth-of-type(3){ animation-delay:.24s; }
+.hero-sentence .pill:nth-of-type(4){ animation-delay:.36s; }
+@keyframes pillIn{ from{ width:0; margin:0; } }
+@media (prefers-reduced-motion: reduce){ .pill{ animation:none; transition:none; } }
+
+.hero-foot{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  align-items:baseline;
+  gap:12px clamp(20px,4vw,48px);
+  padding-top:18px;
+  border-top:1px solid rgba(var(--ink-rgb),0.18);
+  font-size:0.9rem;
 }
-@media (prefers-reduced-motion: reduce){ .scroll-dot{ animation:none; } }
-@media (max-width:640px){ .scrollcue{ display:none; } }
+.hero-foot p{ margin:0; }
+.hero-roles{ color:var(--ink); }
+.hero-tagline{ font-family:'Lora', serif; font-style:italic; color:rgba(var(--ink-rgb),0.6); }
+.hero-down{ color:var(--ink); text-decoration:none; }
+.hero-down span{ display:inline-block; transition:transform .3s ease; }
+.hero-down:hover span, .hero-down:focus-visible span{ transform:translateY(3px); }
+.hero-down:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; }
+@media (max-width:760px){
+  .hero-foot{ grid-template-columns:1fr auto; }
+  .hero-tagline{ display:none; }
+}
 
 /* ---------- SECTION SCAFFOLD ---------- */
 section{ position:relative; padding:clamp(72px,11vw,140px) 0; }
