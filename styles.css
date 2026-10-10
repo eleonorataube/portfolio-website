@@ -318,11 +318,14 @@ p{ margin:0; }
 .case-block{
   display:grid;
   grid-template-columns:minmax(220px,320px) 1fr;
-  gap:clamp(24px,4vw,56px);
+  grid-template-rows:auto 1fr;
+  gap:0 clamp(24px,4vw,56px);
   padding:clamp(36px,5vw,64px) 0 clamp(36px,5vw,64px) var(--edge);
   border-top:1px solid var(--line);
 }
 
+.case-text{ grid-row:1 / span 2; }
+.strip{ align-self:start; }
 .case-num{ display:block; font-size:0.9rem; font-weight:500; color:var(--accent); margin-bottom:10px; }
 .case-text h3{ font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,2.6vw,2.4rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:16px; }
 .case-text p{ color:var(--muted); font-size:0.98rem; max-width:34ch; }
@@ -349,11 +352,44 @@ p{ margin:0; }
 .strip .frame:hover img{ transform:scale(1.03); }
 .frame:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
 
+/* Arrow buttons and progress line for the image rows (added by script.js) */
+.strip-nav{ display:flex; gap:10px; margin-top:clamp(20px,2.6vw,32px); }
+.strip-btn{
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:transparent; color:var(--ink);
+  border:1px solid rgba(var(--ink-rgb),0.25);
+  cursor:pointer;
+  transition:border-color .25s ease, background-color .25s ease, color .25s ease, opacity .25s ease;
+}
+.strip-btn svg{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.strip-btn:hover:not(:disabled), .strip-btn:focus-visible{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+.strip-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+.strip-btn:disabled{ opacity:0.3; cursor:default; }
+.strip-progress{
+  grid-column:2;
+  position:relative;
+  height:2px;
+  margin:clamp(14px,1.6vw,20px) var(--gutter) 0 0;
+  background:var(--line);
+  overflow:hidden;
+}
+.strip-progress span{
+  position:absolute; top:0; bottom:0; left:0;
+  background:var(--accent);
+  transition:left .15s linear;
+}
+.case-block.no-scroll .strip-nav, .case-block.no-scroll .strip-progress{ display:none; }
+
 @media (max-width:760px){
-  .case-block{ grid-template-columns:1fr; padding-left:0; }
+  .case-block{ grid-template-columns:1fr; grid-template-rows:none; row-gap:24px; padding-left:0; }
+  .case-text{ grid-row:auto; }
   .case-text{ padding-inline:var(--gutter); }
   .strip{ padding-left:var(--gutter); scroll-padding-left:var(--gutter); }
   .strip .frame{ height:62vw; max-height:340px; }
+  .strip-progress{ grid-column:1; margin:-8px var(--gutter) 0; }
+  /* on phones swiping is natural - keep the line, drop the buttons */
+  .strip-nav{ display:none; }
 }
 
 /* The "Skatīt" cursor - only with a real mouse */

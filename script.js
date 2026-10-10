@@ -123,3 +123,58 @@
     if (document.querySelector('.lightbox.open')) { shown = false; cursor.classList.remove('on'); draw(); }
   });
 })();
+
+// Project image rows: arrow buttons + a progress line, so it's clear the
+// images continue to the side. Only shown when a row actually overflows.
+(function () {
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var arrow = function (d) {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' +
+      (d < 0 ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7') + '"/></svg>';
+  };
+
+  document.querySelectorAll('.case-block').forEach(function (block) {
+    var strip = block.querySelector('.strip');
+    var text = block.querySelector('.case-text');
+    if (!strip || !text) return;
+
+    var nav = document.createElement('div');
+    nav.className = 'strip-nav';
+    nav.innerHTML =
+      '<button type="button" class="strip-btn" data-dir="-1" aria-label="Iepriekšējie attēli">' + arrow(-1) + '</button>' +
+      '<button type="button" class="strip-btn" data-dir="1" aria-label="Nākamie attēli">' + arrow(1) + '</button>';
+    text.appendChild(nav);
+
+    var progress = document.createElement('div');
+    progress.className = 'strip-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    progress.innerHTML = '<span></span>';
+    strip.insertAdjacentElement('afterend', progress);
+    var thumb = progress.firstChild;
+    var prev = nav.children[0], next = nav.children[1];
+
+    function update() {
+      var max = strip.scrollWidth - strip.clientWidth;
+      block.classList.toggle('no-scroll', max <= 2);
+      if (max <= 2) return;
+      var share = strip.clientWidth / strip.scrollWidth;
+      var pos = strip.scrollLeft / max;
+      thumb.style.width = (share * 100) + '%';
+      thumb.style.left = (pos * (1 - share) * 100) + '%';
+      prev.disabled = strip.scrollLeft <= 2;
+      next.disabled = strip.scrollLeft >= max - 2;
+    }
+
+    nav.addEventListener('click', function (e) {
+      var btn = e.target.closest('.strip-btn');
+      if (!btn) return;
+      strip.scrollBy({ left: btn.dataset.dir * strip.clientWidth * 0.8, behavior: still ? 'auto' : 'smooth' });
+    });
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    strip.querySelectorAll('img').forEach(function (img) {
+      if (!img.complete) img.addEventListener('load', update);
+    });
+    update();
+  });
+})();

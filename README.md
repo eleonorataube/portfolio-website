@@ -22,7 +22,7 @@ npx serve .
 ```
 index.html          all page markup and copy (Latvian)
 styles.css           full design system + layout
-script.js             project lightbox + "Skatīt" cursor
+script.js             project lightbox, "Skatīt" cursor, image-row arrows + progress line
 assets/
   favicon.svg         emoji favicon (🩰)
   images/              all photography + design-work images (jpg)
