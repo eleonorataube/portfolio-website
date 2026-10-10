@@ -2,7 +2,7 @@
    Eleonora Taube - Portfolio
    Editorial, near-monochrome: warm paper ground, ink type, one red accent.
    One typeface: Work Sans - weight 500 with tight tracking for headings,
-   400 for text. Caveat only for the two "Eleonora" signatures and the
+   400 for text. Caveat only for the hero name, the two "Eleonora" signatures and the
    "tā esmu es" note. Highlights ("real person", "story") use colour, not
    italics. One signature detail: the "Skatīt" cursor over project images.
    ========================================================================== */
@@ -90,17 +90,20 @@ p{ margin:0; }
   display:flex; flex-direction:column; justify-content:center;
   padding:clamp(120px,18vh,180px) 0 clamp(90px,12vh,120px) var(--gutter);
 }
+/* Name set like a big signature, matching the hand-written "Eleonora"s */
 .hero-name{
-  font-family:var(--serif);
+  font-family:var(--hand);
   font-weight:500;
-  font-size:clamp(3.4rem,9.6vw,9.6rem);
-  line-height:0.92;
-  letter-spacing:-0.055em;
+  font-size:clamp(4.6rem,13vw,13rem);
+  line-height:0.86;
+  letter-spacing:0;
   white-space:nowrap;
+  transform:rotate(-4deg);
+  transform-origin:left center;
 }
 .hero-name span{ display:block; }
 /* second line steps right and runs over the faded edge of the photo */
-.hero-name-2{ padding-left:1.9em; }
+.hero-name-2{ padding-left:1.4em; }
 .hero-tagline{
   margin-top:clamp(28px,4vw,44px);
   font-size:clamp(1.1rem,1.6vw,1.35rem);
@@ -154,9 +157,9 @@ p{ margin:0; }
   .hero-photo{ order:-1; height:54svh; }
   .hero-photo::after{ background:linear-gradient(0deg, var(--paper) 0%, rgba(var(--paper-rgb),0.55) 18%, rgba(var(--paper-rgb),0) 45%); }
   /* name climbs up into the faded bottom of the photo */
-  .hero-panel{ padding:0 var(--gutter) 96px; margin-top:-0.45em; font-size:clamp(3.2rem,15vw,4.6rem); }
+  .hero-panel{ padding:0 var(--gutter) 96px; margin-top:-0.5em; font-size:clamp(4.2rem,21vw,6.4rem); }
   .hero-name{ font-size:1em; }
-  .hero-name-2{ padding-left:1.2em; }
+  .hero-name-2{ padding-left:1em; }
   .hero-tagline{ font-size:1.1rem; }
 }
 

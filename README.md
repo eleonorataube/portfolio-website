@@ -49,7 +49,7 @@ portrait and a signed pull-quote, not decoration.
 **Type.**
 - Everything - [Work Sans]: weight 500 with tight letter-spacing for headings,
   400 for text. Highlighted words use colour, not italics.
-- Hand-written - [Caveat], only for the two "Eleonora" signatures and the
+- Hand-written - [Caveat], only for the hero name, the two "Eleonora" signatures and the
   "tā esmu es" note.
 
 **Layout.** Hero is a beige/photo split screen; the name's second line runs
