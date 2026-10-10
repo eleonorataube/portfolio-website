@@ -193,14 +193,14 @@ p{ margin:0; }
 
 /* Hand-written note beside the portrait */
 .note-hand{
-  position:absolute; top:100%; left:0; margin-top:4px;
+  position:absolute; top:100%; left:0; margin-top:-6px;
   display:flex; align-items:flex-start;
   font-family:var(--hand); font-size:1.7rem; line-height:1;
   color:var(--accent);
   transform:rotate(-6deg);
 }
-.note-hand span{ margin-top:34px; }
-.note-arrow{ width:96px; height:56px; fill:none; stroke:var(--accent); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-left:6px; }
+.note-hand span{ margin-top:18px; }
+.note-arrow{ width:80px; height:46px; fill:none; stroke:var(--accent); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-left:6px; }
 
 @media (max-width:860px){
   .about{ display:block; }
