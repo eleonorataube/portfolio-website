@@ -85,7 +85,7 @@ it reads like a curated wall rather than a template gallery.
   `kristianam`, `ielugums`), Plakāti (`coming-soon-poster`,
   `atplauksti-marupe`), Sociālo tīklu vizuāļi (`linkedin-content-fire`,
   `linkedin-roles`, `coming-soon`, `atplauksti-atsauksmes`,
-  `atplauksti-jolanta`) and Fotogrāfija (`foto-1` … `foto-6`).
+  `atplauksti-jolanta`) and Fotogrāfija (`fotografija-1` … `fotografija-6`).
 
 ## Deploy
 
