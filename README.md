@@ -81,13 +81,11 @@ it reads like a curated wall rather than a template gallery.
 - All copy is in Latvian, written in first person.
 - Experience, education, languages and skills are pulled from her CV
   (`Eleonora_Taube_CV_2026.pdf`, not included in this repo).
-- The seven images under `assets/images/` (`kristianam`, `ielugums`,
-  `ieelpot`, `lieldienas`, `novelejumi`, `uzmanibu`, `pink_poster`) were
-  cropped from `PORTFOLIO_2026_1.pdf`. Six more
-  (`hero`, `ph_arm`, `ph_shoulder`, `ph_group`, `ph_legs`, `ph_street`) are
-  her own black-and-white photography from the same file's "Fotogrāfija"
-  page. Swap any of these for higher-resolution originals if she has them -
-  these were compressed for a fast first load.
+- Project images live in `assets/images/`: Ielūgumi (`ielugumi-main`,
+  `kristianam`, `ielugums`), Plakāti (`coming-soon-poster`,
+  `atplauksti-marupe`), Sociālo tīklu vizuāļi (`linkedin-content-fire`,
+  `linkedin-roles`, `coming-soon`, `atplauksti-atsauksmes`,
+  `atplauksti-jolanta`) and Fotogrāfija (`foto-1` … `foto-6`).
 
 ## Deploy
 
