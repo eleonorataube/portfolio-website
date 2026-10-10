@@ -47,11 +47,10 @@ portrait and a signed pull-quote, not decoration.
 | `--accent` | `#a1091b` | the one accent (numbers, notes, cursor, links on hover) |
 
 **Type.**
-- Headings - [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif),
-  set very large for contrast. Avoid italic on words starting with "Ā" - its
-  italic macron sits off-centre.
-- Body - [Work Sans].
-- Hand-written - [Caveat], only for the two "Eleonora" signatures and the "tā esmu es" note.
+- Everything - [Work Sans]: weight 500 with tight letter-spacing for headings,
+  400 for text. Highlighted words use colour, not italics.
+- Hand-written - [Caveat], only for the two "Eleonora" signatures and the
+  "tā esmu es" note.
 
 **Layout.** Hero is a beige/photo split screen; the name's second line runs
 over the faded edge of the photo. Below: asymmetric 12-column "Par mani" with

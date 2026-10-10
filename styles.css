@@ -1,10 +1,10 @@
 /* ==========================================================================
    Eleonora Taube - Portfolio
    Editorial, near-monochrome: warm paper ground, ink type, one red accent.
-   Two roles only: Instrument Serif for headings and big statements (avoid
-   italic on words starting with "Ā" - its italic macron sits off-centre),
-   Work Sans for all small text. Caveat only for the two "Eleonora"
-   signatures and the "tā esmu es" note. One signature detail: the "Skatīt" cursor over project images.
+   One typeface: Work Sans - weight 500 with tight tracking for headings,
+   400 for text. Caveat only for the two "Eleonora" signatures and the
+   "tā esmu es" note. Highlights ("real person", "story") use colour, not
+   italics. One signature detail: the "Skatīt" cursor over project images.
    ========================================================================== */
 
 :root{
@@ -18,7 +18,7 @@
   --line:rgba(21,4,7,0.14);
   --accent:#a1091b;
 
-  --serif:'Instrument Serif', 'Times New Roman', serif;
+  --serif:'Work Sans', system-ui, sans-serif; /* headings - same family as body, heavier */
   --sans:'Work Sans', system-ui, sans-serif;
   --hand:'Caveat', 'Segoe Print', cursive;
 
@@ -57,11 +57,12 @@ p{ margin:0; }
 /* Big section titles - real hierarchy, no labels above them */
 .display{
   font-family:var(--serif);
-  font-size:clamp(3.4rem,10vw,9rem);
-  line-height:1;
-  letter-spacing:0;
+  font-weight:500;
+  font-size:clamp(2.8rem,7.5vw,7rem);
+  line-height:0.98;
+  letter-spacing:-0.045em;
 }
-.display--small{ font-size:clamp(2.8rem,7vw,6rem); }
+.display--small{ font-size:clamp(2.4rem,5.6vw,5rem); }
 
 /* ---------- HERO ---------- */
 .hero{
@@ -91,18 +92,18 @@ p{ margin:0; }
 }
 .hero-name{
   font-family:var(--serif);
-  font-size:clamp(4.4rem,15vw,15rem);
-  line-height:0.94;
-  letter-spacing:-0.005em;
+  font-weight:500;
+  font-size:clamp(3.4rem,9.6vw,9.6rem);
+  line-height:0.92;
+  letter-spacing:-0.055em;
   white-space:nowrap;
 }
 .hero-name span{ display:block; }
 /* second line steps right and runs over the faded edge of the photo */
-.hero-name-2{ padding-left:1.5em; }
+.hero-name-2{ padding-left:1.9em; }
 .hero-tagline{
   margin-top:clamp(28px,4vw,44px);
-  font-family:var(--serif); font-style:italic; letter-spacing:0.015em;
-  font-size:clamp(1.3rem,2vw,1.7rem);
+  font-size:clamp(1.1rem,1.6vw,1.35rem);
   color:var(--muted);
 }
 .hero-roles{
@@ -153,10 +154,10 @@ p{ margin:0; }
   .hero-photo{ order:-1; height:54svh; }
   .hero-photo::after{ background:linear-gradient(0deg, var(--paper) 0%, rgba(var(--paper-rgb),0.55) 18%, rgba(var(--paper-rgb),0) 45%); }
   /* name climbs up into the faded bottom of the photo */
-  .hero-panel{ padding:0 var(--gutter) 96px; margin-top:-0.55em; font-size:clamp(4.4rem,19vw,6rem); }
+  .hero-panel{ padding:0 var(--gutter) 96px; margin-top:-0.45em; font-size:clamp(3.2rem,15vw,4.6rem); }
   .hero-name{ font-size:1em; }
-  .hero-name-2{ padding-left:0.6em; }
-  .hero-tagline{ font-size:1.25rem; }
+  .hero-name-2{ padding-left:1.2em; }
+  .hero-tagline{ font-size:1.1rem; }
 }
 
 /* ---------- ABOUT ---------- */
@@ -170,9 +171,10 @@ p{ margin:0; }
 .about-lead{
   grid-column:1 / 7; grid-row:2;
   font-family:var(--serif);
-  font-size:clamp(1.8rem,3.4vw,3rem);
-  line-height:1.22;
-  letter-spacing:0.005em;
+  font-weight:500;
+  font-size:clamp(1.5rem,2.6vw,2.3rem);
+  line-height:1.2;
+  letter-spacing:-0.025em;
 }
 .about-photo{
   grid-column:8 / 13; grid-row:2 / 4;
@@ -232,7 +234,7 @@ p{ margin:0; }
   align-items:baseline;
 }
 .skill-row:last-child{ border-bottom:1px solid var(--line); }
-.skill-row dt{ font-family:var(--serif); font-size:clamp(1.7rem,3vw,2.5rem); line-height:1.15; letter-spacing:0.005em; }
+.skill-row dt{ font-family:var(--serif); font-weight:500; font-size:clamp(1.4rem,2.2vw,1.9rem); line-height:1.15; letter-spacing:-0.025em; }
 .skill-row dd{ margin:0; }
 .skill-row ul{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px 0; font-size:1.02rem; }
 .skill-row li:not(:last-child)::after{ content:"/"; margin:0 0.7em; color:var(--faint); }
@@ -249,7 +251,7 @@ p{ margin:0; }
   padding-block:clamp(26px,3.4vw,40px);
   border-top:1px solid var(--line);
 }
-.job h3{ font-family:var(--serif); font-size:clamp(1.9rem,3.6vw,3.1rem); line-height:1.1; letter-spacing:0.005em; }
+.job h3{ font-family:var(--serif); font-weight:500; font-size:clamp(1.5rem,2.6vw,2.2rem); line-height:1.12; letter-spacing:-0.025em; }
 .job p{ color:var(--muted); max-width:56ch; padding-top:0.5em; }
 @media (max-width:760px){ .job{ grid-template-columns:1fr; } .job p{ padding-top:0; } }
 
@@ -276,11 +278,12 @@ p{ margin:0; }
 .quote blockquote{ margin:0; max-width:1100px; }
 .quote p{
   font-family:var(--serif);
-  font-size:clamp(2.4rem,6.4vw,6.2rem);
-  line-height:1.1;
-  letter-spacing:0;
+  font-weight:500;
+  font-size:clamp(2rem,5vw,4.8rem);
+  line-height:1.05;
+  letter-spacing:-0.04em;
 }
-.quote em{ font-style:italic; color:#e7a3ab; }
+.quote em{ font-style:normal; color:#e7a3ab; }
 .signature{
   margin:clamp(28px,4vw,48px) 0 0;
   font-family:var(--hand); font-size:clamp(2.2rem,4vw,3.2rem);
@@ -301,7 +304,7 @@ p{ margin:0; }
 }
 
 .case-num{ display:block; font-size:0.9rem; font-weight:500; color:var(--accent); margin-bottom:10px; }
-.case-text h3{ font-family:var(--serif); font-size:clamp(2.2rem,3.6vw,3.2rem); line-height:1.08; letter-spacing:0.005em; margin-bottom:16px; }
+.case-text h3{ font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,2.6vw,2.4rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:16px; }
 .case-text p{ color:var(--muted); font-size:0.98rem; max-width:34ch; }
 
 /* Images run off the right edge of the page and scroll sideways */
@@ -360,12 +363,13 @@ p{ margin:0; }
 }
 .contact-title{
   font-family:var(--serif);
-  font-size:clamp(3.2rem,9vw,8.6rem);
-  line-height:1;
-  letter-spacing:0;
-  max-width:11ch;
+  font-weight:500;
+  font-size:clamp(2.6rem,7vw,6.6rem);
+  line-height:0.98;
+  letter-spacing:-0.045em;
+  max-width:13ch;
 }
-.contact-title em{ font-style:italic; color:#e7a3ab; }
+.contact-title em{ font-style:normal; color:#e7a3ab; }
 .contact-links{
   margin-top:clamp(40px,6vw,72px);
   display:flex; flex-direction:column; gap:14px; align-items:flex-start;
