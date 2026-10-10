@@ -68,10 +68,11 @@ images (mouse only; touch and keyboard keep the defaults). No scroll reveals.
 - Experience, education, languages and skills are pulled from her CV
   (`Eleonora_Taube_CV_2026.pdf`, not included in this repo).
 - Project images live in `assets/images/`: Infografikas (`infografika-1`,
-  `infografika-2`), Plakāti (`coming-soon-poster`,
-  `atplauksti-marupe`), Sociālo tīklu vizuāļi (`linkedin-content-fire`,
+  `infografika-2`), Sociālo tīklu vizuāļi (`linkedin-content-fire`,
   `linkedin-roles`, `coming-soon`, `atplauksti-atsauksmes`,
   `atplauksti-jolanta`) and Fotogrāfija (`fotografija-1` … `fotografija-6`).
+- The Plakāti project is hidden for now; its images (`coming-soon-poster`,
+  `atplauksti-marupe`) stay in `assets/images/` for when it comes back.
 
 ## Deploy
 
