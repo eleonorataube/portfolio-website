@@ -149,9 +149,10 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
 }
 .hero ::selection{ background:var(--accent); color:var(--paper); }
 .hero-panel{
-  display:flex; flex-direction:column; justify-content:space-between;
-  padding:clamp(110px,16vh,170px) clamp(20px,5vw,64px) clamp(24px,4vw,44px);
+  display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start;
+  padding:clamp(110px,16vh,170px) clamp(20px,5vw,64px) clamp(28px,4vw,48px);
 }
+.hero-main{ margin:auto 0; }
 .hero-name{
   font-family:'Fraunces', Georgia, serif;
   font-weight:400;
@@ -167,23 +168,20 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   font-size:clamp(1.1rem,1.8vw,1.45rem);
   color:rgba(var(--ink-rgb),0.62);
 }
-.hero-bottom{
-  display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
-  margin-top:48px;
-}
 .hero-roles{
-  list-style:none; margin:0; padding:0;
-  font-size:0.95rem;
-  flex:1; max-width:340px;
+  margin:clamp(36px,6vh,64px) 0 0;
+  font-size:0.85rem;
+  letter-spacing:0.02em;
+  color:rgba(var(--ink-rgb),0.55);
 }
-.hero-roles li{
-  padding:10px 0;
-  border-top:1px solid rgba(var(--ink-rgb),0.16);
+.hero-down{
+  display:flex; align-items:center; justify-content:center;
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid rgba(var(--ink-rgb),0.22);
+  color:var(--ink); text-decoration:none; font-size:1rem;
+  transition:border-color .3s ease, transform .3s ease;
 }
-.hero-roles li:last-child{ border-bottom:1px solid rgba(var(--ink-rgb),0.16); }
-.hero-down{ color:var(--ink); text-decoration:none; font-size:0.95rem; white-space:nowrap; }
-.hero-down span{ display:inline-block; transition:transform .3s ease; }
-.hero-down:hover span, .hero-down:focus-visible span{ transform:translateY(3px); }
+.hero-down:hover, .hero-down:focus-visible{ border-color:var(--ink); transform:translateY(3px); }
 .hero-down:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; }
 .hero-photo{ position:relative; overflow:hidden; }
 .hero-photo img{
@@ -201,7 +199,7 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   .hero-photo{ order:-1; height:52svh; }
   .hero-photo::after{ background:linear-gradient(0deg, var(--paper) 0%, rgba(242,230,220,0.55) 18%, rgba(242,230,220,0) 45%); }
   .hero-panel{ padding-top:clamp(28px,6vw,40px); }
-  .hero-bottom{ margin-top:36px; }
+  .hero-down{ margin-top:40px; }
 }
 
 /* ---------- SECTION SCAFFOLD ---------- */
