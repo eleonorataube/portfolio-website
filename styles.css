@@ -290,7 +290,7 @@ p{ margin:0; }
   padding:clamp(36px,5vw,64px) 0 clamp(36px,5vw,64px) var(--edge);
   border-top:1px solid var(--line);
 }
-.case-block:last-child{ border-bottom:1px solid var(--line); }
+
 .case-num{ display:block; font-family:var(--serif); font-style:italic; font-size:1.4rem; letter-spacing:0.02em; color:var(--accent); margin-bottom:6px; }
 .case-text h3{ font-family:var(--serif); font-size:clamp(2.2rem,3.6vw,3.2rem); line-height:1.08; letter-spacing:0.005em; margin-bottom:16px; }
 .case-text p{ color:var(--muted); font-size:0.98rem; max-width:34ch; }
@@ -343,7 +343,12 @@ p{ margin:0; }
 }
 
 /* ---------- CONTACT ---------- */
-.contact{ padding-block:clamp(96px,14vw,200px) 40px; }
+/* Dark like the quote band, so the page ends the way the quote looks */
+.contact{
+  background:var(--ink);
+  color:var(--paper);
+  padding-block:clamp(96px,14vw,200px) 40px;
+}
 .contact-title{
   font-family:var(--serif);
   font-size:clamp(3.2rem,9vw,8.6rem);
@@ -351,7 +356,7 @@ p{ margin:0; }
   letter-spacing:0;
   max-width:11ch;
 }
-.contact-title em{ font-style:italic; color:var(--accent); }
+.contact-title em{ font-style:italic; color:#e7a3ab; }
 .contact-links{
   margin-top:clamp(40px,6vw,72px);
   display:flex; flex-direction:column; gap:14px; align-items:flex-start;
@@ -359,17 +364,17 @@ p{ margin:0; }
 .contact-links a{
   font-family:var(--serif); font-size:clamp(1.4rem,2.6vw,2.2rem); letter-spacing:0.01em;
   text-decoration:none;
-  background:linear-gradient(var(--ink),var(--ink)) 0 100% / 100% 1px no-repeat;
+  background:linear-gradient(rgba(var(--paper-rgb),0.5),rgba(var(--paper-rgb),0.5)) 0 100% / 100% 1px no-repeat;
   padding-bottom:2px;
   transition:color .25s ease, background-size .3s ease;
 }
-.contact-links a:hover, .contact-links a:focus-visible{ color:var(--accent); background-image:linear-gradient(var(--accent),var(--accent)); }
+.contact-links a:hover, .contact-links a:focus-visible{ color:#e7a3ab; background-image:linear-gradient(#e7a3ab,#e7a3ab); }
 .contact-bottom{
   margin-top:clamp(80px,10vw,140px);
   padding-top:20px;
-  border-top:1px solid var(--line);
+  border-top:1px solid rgba(var(--paper-rgb),0.14);
   display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-  font-size:0.85rem; color:var(--faint);
+  font-size:0.85rem; color:rgba(var(--paper-rgb),0.5);
 }
 
 /* ---------- LIGHTBOX ---------- */
