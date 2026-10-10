@@ -174,14 +174,30 @@ nav.links a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; 
   letter-spacing:0.02em;
   color:rgba(var(--ink-rgb),0.55);
 }
-.hero-down{
-  display:flex; align-items:center; justify-content:center;
-  width:42px; height:42px; border-radius:50%;
-  border:1px solid rgba(var(--ink-rgb),0.22);
-  color:var(--ink); text-decoration:none; font-size:1rem;
-  transition:border-color .3s ease, transform .3s ease;
+.hero-down{ display:block; padding:4px; text-decoration:none; }
+.scroll-mouse{
+  display:block;
+  width:22px; height:36px;
+  border:1.5px solid rgba(var(--ink-rgb),0.4);
+  border-radius:12px;
+  position:relative;
+  transition:border-color .3s ease;
 }
-.hero-down:hover, .hero-down:focus-visible{ border-color:var(--ink); transform:translateY(3px); }
+.hero-down:hover .scroll-mouse, .hero-down:focus-visible .scroll-mouse{ border-color:var(--ink); }
+.scroll-dot{
+  position:absolute; top:6px; left:50%;
+  width:4px; height:8px;
+  margin-left:-2px;
+  border-radius:2px;
+  background:rgba(var(--ink-rgb),0.55);
+  animation:scrollDot 1.6s ease-in-out infinite;
+}
+@keyframes scrollDot{
+  0%{ opacity:1; transform:translateY(0); }
+  70%{ opacity:0; transform:translateY(10px); }
+  100%{ opacity:0; transform:translateY(0); }
+}
+@media (prefers-reduced-motion: reduce){ .scroll-dot{ animation:none; } }
 .hero-down:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; }
 .hero-photo{ position:relative; overflow:hidden; }
 .hero-photo img{
