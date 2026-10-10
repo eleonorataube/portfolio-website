@@ -1,51 +1,3 @@
-// Scroll-reveal for elements marked .reveal — fades and lifts sections
-// into view as the visitor scrolls. Falls back to showing everything
-// immediately if IntersectionObserver isn't available.
-(function () {
-  var els = document.querySelectorAll('.reveal');
-
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(function (el) { el.classList.add('in'); });
-    return;
-  }
-
-  var io = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-  );
-
-  els.forEach(function (el) { io.observe(el); });
-})();
-
-// Nav background — solid page-background color once the hero has been
-// scrolled past, instead of the mix-blend-mode trick that only reads
-// correctly over the photo.
-(function () {
-  var nav = document.querySelector('header.site-nav');
-  var hero = document.querySelector('.hero');
-  if (!nav || !hero) return;
-
-  if (!('IntersectionObserver' in window)) return;
-
-  var io = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        nav.classList.toggle('scrolled', !entry.isIntersecting);
-      });
-    },
-    { threshold: 0, rootMargin: '-72px 0px 0px 0px' }
-  );
-
-  io.observe(hero);
-})();
-
 // Lightbox for the "Projekti" gallery — click (or Enter/Space) a frame to
 // see the full image; arrows, arrow keys or a swipe step through the other
 // photos of the same project. Escape, the close button, or a click outside
@@ -129,5 +81,45 @@
     var dx = e.changedTouches[0].clientX - touchX;
     touchX = null;
     if (Math.abs(dx) > 40) show(dx < 0 ? index + 1 : index - 1);
+  });
+})();
+
+// "Skatīt" cursor over project images - the page's one signature detail.
+// Only for a real mouse; touch screens and keyboard users keep the defaults.
+(function () {
+  var cursor = document.querySelector('.cursor');
+  if (!cursor || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var x = -200, y = -200, cx = x, cy = y, shown = false, raf = null;
+
+  function draw() {
+    cx += (x - cx) * (still ? 1 : 0.22);
+    cy += (y - cy) * (still ? 1 : 0.22);
+    cursor.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0) scale(' + (shown ? 1 : 0) + ')';
+    raf = (Math.abs(x - cx) > 0.3 || Math.abs(y - cy) > 0.3) ? requestAnimationFrame(draw) : null;
+  }
+  function move(e) {
+    x = e.clientX; y = e.clientY;
+    if (!raf) raf = requestAnimationFrame(draw);
+  }
+
+  document.querySelectorAll('.strip .frame').forEach(function (frame) {
+    frame.addEventListener('mouseenter', function (e) {
+      if (!shown) { cx = x = e.clientX; cy = y = e.clientY; }
+      shown = true;
+      cursor.classList.add('on');
+      draw();
+    });
+    frame.addEventListener('mouseleave', function () {
+      shown = false;
+      cursor.classList.remove('on');
+      draw();
+    });
+  });
+  document.addEventListener('mousemove', move, { passive: true });
+  // Hide it while the lightbox is open
+  document.addEventListener('click', function () {
+    if (document.querySelector('.lightbox.open')) { shown = false; cursor.classList.remove('on'); draw(); }
   });
 })();

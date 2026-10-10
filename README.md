@@ -22,7 +22,7 @@ npx serve .
 ```
 index.html          all page markup and copy (Latvian)
 styles.css           full design system + layout
-script.js             scroll-reveal (IntersectionObserver)
+script.js             project lightbox + "Skatīt" cursor
 assets/
   favicon.svg         emoji favicon (🩰)
   images/              all photography + design-work images (jpg)
@@ -30,51 +30,38 @@ assets/
 
 ## Design system
 
-**Concept.** Everything Eleonora does - PR, graphic design, dance teaching,
-photography - is read through one lens: movement. The site is built as a
-"contact sheet" - a dark gallery wall that her black-and-white dance
-photography and colour client work both get displayed against, with subtle
-scroll-reveal motion and hover states that behave like flipping through
-negatives.
+**Concept.** Editorial and near-monochrome - a design-studio portfolio rather
+than a landing page. Warm paper ground, ink type, one red accent. The human,
+people-first angle comes through real photos, a hand-written note beside the
+portrait and a signed pull-quote, not decoration.
 
 **Color tokens** (defined in `:root` in `styles.css`):
 
 | Token | Hex | Use |
 |---|---|---|
-| `--ink` | `#141416` | page background |
-| `--ink-raised` | `#1c1c1f` | gallery tile background |
-| `--paper` | `#ece4d4` | primary text (warm bone) |
-| `--paper-dim` | `#a89d8b` | secondary text |
-| `--paper-faint` | `#726a5d` | tertiary / index numbers |
-| `--accent` | `#c99a4c` | brass accent (dots, waveform bars) |
-| `--accent-soft` | `#e0bb7c` | accent on text (links, emphasis) |
-| `--wine` | `#8c3b45` | reserved secondary accent, currently unused - available for a future CTA or badge |
-| `--line` / `--line-soft` | rgba bone at 14% / 7% | hairline dividers |
-
-This is currently a **single committed dark theme** (a deliberate choice, not
-an oversight - it's meant to read like a lit gallery wall / darkroom). If you
-ever want a light mode, every color is already a token in `:root`, so the
-next step would be adding a `prefers-color-scheme: light` override plus a
-`[data-theme]` toggle.
+| `--paper` | `#f2e6dc` | page background |
+| `--paper-deep` | `#e8d9cc` | image placeholders |
+| `--ink` | `#150407` | text; background of the quote band |
+| `--muted` / `--faint` | ink at 62% / 45% | secondary / tertiary text |
+| `--line` | ink at 14% | hairline dividers |
+| `--accent` | `#a1091b` | the one accent (numbers, notes, cursor, links on hover) |
 
 **Type.**
-- Display - [Fraunces](https://fonts.google.com/specimen/Fraunces) (variable,
-  `ital,opsz,wght` axes) for the name, headings and italic pull-quotes.
-- Body - [Work Sans] for running copy.
-- Labels / meta / numbers - [JetBrains Mono] for eyebrows, dates, frame
-  numbers and nav - a nod to contact-sheet frame counters.
+- Headings - [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif),
+  set very large for contrast. Avoid italic on words starting with "Ā" - its
+  italic macron sits off-centre.
+- Body - [Work Sans].
+- Hand-written notes and signature - [Caveat].
 
-All three are loaded from Google Fonts in `index.html`'s `<head>`. If you
-later add a bundler, swap that `<link>` for self-hosted `@font-face` files
-for performance and to drop the external request.
+**Layout.** Hero is a beige/photo split screen; the name's second line runs
+over the faded edge of the photo. Below: asymmetric 12-column "Par mani" with
+an offset text column, typographic skill and experience rows, one full-bleed
+dark quote band, and project rows whose images bleed off the right edge and
+scroll sideways.
 
-**Layout.** Hero is a full-bleed, desaturated dance photo with a huge kinetic
-name treatment. Sections below run in a single `.wrap` column
-(max-width 1180px) with a numbered index (`01 - Ievads`, `02 - Rīki & ritms`
-…) that doubles as a table of contents. The two portfolio sections
-(`#darbi`, `#fotografija`) use an asymmetric CSS grid (`.contact-sheet`) with
-varied tile spans (`.f-w1`, `.f-w2`, `.f-tall`) rather than a uniform grid, so
-it reads like a curated wall rather than a template gallery.
+**Motion.** Deliberately minimal - the scroll-mouse in the hero, image hover
+zoom, and the one signature detail: a red "Skatīt" cursor over project
+images (mouse only; touch and keyboard keep the defaults). No scroll reveals.
 
 ## Content notes
 

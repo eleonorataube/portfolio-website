@@ -8,253 +8,194 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=13" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=20" />
 </head>
 <body>
-
-<header class="site-nav">
-  <a class="brandmark" href="#top">Eleonora Taube</a>
-  <nav class="links">
-    <a href="#par-mani">Par&nbsp;mani</a>
-    <a href="#pieredze">Pieredze</a>
-    <a href="#darbi">Projekti</a>
-    <a href="#kontakti">Kontakti</a>
-  </nav>
-</header>
 
 <main id="top">
 
   <section class="hero">
+    <header class="site-nav">
+      <a class="brandmark" href="#top">Eleonora Taube</a>
+      <nav class="links">
+        <a href="#par-mani">Par mani</a>
+        <a href="#pieredze">Pieredze</a>
+        <a href="#darbi">Projekti</a>
+        <a href="#kontakti">Kontakti</a>
+      </nav>
+    </header>
     <div class="hero-panel">
-      <div class="hero-main">
-        <h1 class="hero-name">Eleonora<br>Taube</h1>
-        <p class="hero-tagline">There is beauty in simplicity</p>
-        <p class="hero-roles">PR speciāliste - Grafiskā dizainere - Sociālo mediju speciāliste</p>
-      </div>
-      <a class="hero-down" href="#par-mani" aria-label="Ritini uz leju"><span class="scroll-mouse" aria-hidden="true"><span class="scroll-dot"></span></span></a>
+      <h1 class="hero-name"><span>Eleonora</span><span class="hero-name-2">Taube</span></h1>
+      <p class="hero-tagline">There is beauty in simplicity</p>
+      <p class="hero-roles">PR speciāliste - Grafiskā dizainere - Sociālo mediju speciāliste</p>
     </div>
     <div class="hero-photo">
       <img src="assets/images/hero-jump.jpg?v=2" alt="Melnbalts kadrs - lēciens klintī pie jūras, priedes zari abās pusēs" />
     </div>
+    <a class="hero-down" href="#par-mani" aria-label="Ritini uz leju"><span class="scroll-mouse" aria-hidden="true"><span class="scroll-dot"></span></span></a>
   </section>
 
-  <section id="par-mani">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Par mani</h2>
-      </div>
-      <div class="about-grid reveal">
-        <div class="about-photo about-photo--color">
-          <img src="assets/images/par-mani-portrait.jpg" alt="Portrets sarkanā studijas fonā, melnā kleitā" />
-        </div>
-        <div class="about-copy">
-          <p>Esmu Eleonora - komunikācijas un dizaina speciāliste ar interesi par to, kā ideju pārvērst vizuālā stāstā.</p>
-          <p>Man patīk radīt lietas, kurām ir gan estētika, gan doma. Mani interesē vizuālā identitāte, sociālo tīklu saturs, digitālā komunikācija un tas, kā dizains var palīdzēt ideju padarīt saprotamu un pamanāmu.</p>
-          <p>Man patīk vienkāršas, pārdomātas idejas, kurās katram elementam ir sava vieta un nozīme. Es ticu, ka labs dizains nav par to, cik daudz tajā ir, bet par to, cik labi viss kopā strādā.</p>
-        </div>
-      </div>
+  <section id="par-mani" class="about wrap">
+    <h2 class="display">Par mani</h2>
+    <p class="about-lead">Esmu Eleonora - komunikācijas un dizaina speciāliste ar interesi par to, kā ideju pārvērst vizuālā stāstā.</p>
+    <figure class="about-photo">
+      <img src="assets/images/par-mani-portrait.jpg" alt="Portrets sarkanā studijas fonā, melnā kleitā" />
+      <figcaption class="note-hand">
+        <svg class="note-arrow" viewBox="0 0 120 70" aria-hidden="true"><path d="M4 60 C 30 62, 70 50, 104 14" /><path d="M86 12 L 106 12 L 102 32" /></svg>
+        <span>tā esmu es</span>
+      </figcaption>
+    </figure>
+    <div class="about-body">
+      <p>Man patīk radīt lietas, kurām ir gan estētika, gan doma. Mani interesē vizuālā identitāte, sociālo tīklu saturs, digitālā komunikācija un tas, kā dizains var palīdzēt ideju padarīt saprotamu un pamanāmu.</p>
+      <p>Man patīk vienkāršas, pārdomātas idejas, kurās katram elementam ir sava vieta un nozīme. Es ticu, ka labs dizains nav par to, cik daudz tajā ir, bet par to, cik labi viss kopā strādā.</p>
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Prasmes</h2>
+  <section class="skills wrap">
+    <h2 class="display display--small">Prasmes</h2>
+    <dl class="skill-rows">
+      <div class="skill-row">
+        <dt>Komunikācija</dt>
+        <dd><ul>
+          <li>Zīmola komunikācija</li>
+          <li>Satura veidošana &amp; copywriting</li>
+          <li>Sociālo mediju stratēģija</li>
+          <li>Prezentēšana &amp; publiskā uzstāšanās</li>
+        </ul></dd>
       </div>
-      <div class="skill-clusters reveal">
-        <div class="cluster">
-          <h3><span class="cluster-label">Komunikācija</span></h3>
-          <ul class="chip-list">
-            <li>Zīmola komunikācija</li>
-            <li>Satura veidošana &amp; copywriting</li>
-            <li>Sociālo mediju stratēģija</li>
-            <li>Prezentēšana &amp; publiskā uzstāšanās</li>
-          </ul>
-        </div>
-        <div class="cluster">
-          <h3><span class="cluster-label">Dizains</span></h3>
-          <ul class="chip-list">
-            <li>Digitālā tēla veidošana</li>
-            <li>Figma · Adobe XD · Canva</li>
-            <li>UI/UX dizains</li>
-            <li>Foto &amp; video uzņemšana, montāža</li>
-          </ul>
-        </div>
-        <div class="cluster">
-          <h3><span class="cluster-label">Rīki</span></h3>
-          <ul class="chip-list">
-            <li>Projektu koordinēšana</li>
-            <li>MS Office &amp; Google Suite</li>
-            <li>Meta Business Suite</li>
-            <li>Tālākizglītības kursi</li>
-          </ul>
-        </div>
+      <div class="skill-row">
+        <dt>Dizains</dt>
+        <dd><ul>
+          <li>Digitālā tēla veidošana</li>
+          <li>Figma · Adobe XD · Canva</li>
+          <li>UI/UX dizains</li>
+          <li>Foto &amp; video uzņemšana, montāža</li>
+        </ul></dd>
       </div>
+      <div class="skill-row">
+        <dt>Rīki</dt>
+        <dd><ul>
+          <li>Projektu koordinēšana</li>
+          <li>MS Office &amp; Google Suite</li>
+          <li>Meta Business Suite</li>
+          <li>Tālākizglītības kursi</li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="pieredze" class="experience wrap">
+    <h2 class="display">Pieredze</h2>
+    <ol class="jobs">
+      <li class="job">
+        <h3>PR speciāliste</h3>
+        <p>Mājaslapas administrēšana un pārvaldīšana, sociālo tīklu komunikācijas plānu izstrāde, vizuālo materiālu un infografiku veidošana, preses relīzes, pasākumu organizēšana.</p>
+      </li>
+      <li class="job">
+        <h3>Ārštata grafiskā dizainere</h3>
+        <p>Vizuālās identitātes un grafiskā dizaina risinājumi zīmoliem un uzņēmumiem: pārdomāti, estētiski un mērķauditorijai atbilstoši. Individuāla pieeja katram projektam, cieša sadarbība ar klientiem un termiņu ievērošana - no idejas līdz gala rezultātam.</p>
+      </li>
+      <li class="job">
+        <h3>Pacientu koordinatore</h3>
+        <p>Onkoloģisko pacientu koordinēšana ambulatorajā ķirurģijā - efektīva ārstniecības procesa un informācijas aprite starp pacientiem, ārstiem un slimnīcas struktūrvienībām.</p>
+      </li>
+    </ol>
+    <div class="also">
+      <p class="also-title">Vēl</p>
+      <ul class="also-list">
+        <li><strong>Digitālā satura izveide</strong> SMU "Trīsreizējs" · ASV uzņēmums "Lift" · SIA "Milzu!" · Fizisko aktivitāšu klīnika "4x4"</li>
+        <li><strong>Deju skolotāja</strong> Profesionālās ievirzes deju skola "Benefice"</li>
+        <li><strong>Vadītāja asistente</strong> Fizisko aktivitāšu klīnika "4x4"</li>
+      </ul>
     </div>
   </section>
 
-  <section id="pieredze">
+  <section class="quote">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Pieredze</h2>
-      </div>
-      <div class="timeline reveal">
-        <div class="tl-row">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <h3>PR speciāliste</h3>
-            <p>Mājaslapas administrēšana un pārvaldīšana, sociālo tīklu komunikācijas plānu izstrāde, vizuālo materiālu un infografiku veidošana, preses relīzes, pasākumu organizēšana.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <h3>Ārštata grafiskā dizainere</h3>
-            <p>Vizuālās identitātes un grafiskā dizaina risinājumi zīmoliem un uzņēmumiem: pārdomāti, estētiski un mērķauditorijai atbilstoši. Individuāla pieeja katram projektam, cieša sadarbība ar klientiem un termiņu ievērošana - no idejas līdz gala rezultātam.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <h3>Pacientu koordinatore</h3>
-            <p>Onkoloģisko pacientu koordinēšana ambulatorajā ķirurģijā - efektīva ārstniecības procesa un informācijas aprite starp pacientiem, ārstiem un slimnīcas struktūrvienībām.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="side-notes reveal">
-        <div class="note">
-          <span class="eyebrow">Digitālā satura izveide</span>
-          <p>SMU "Trīsreizējs" · ASV uzņēmums "Lift" · SIA "Milzu!" · Fizisko aktivitāšu klīnika "4x4"</p>
-        </div>
-        <div class="note">
-          <span class="eyebrow">Deju skolotāja</span>
-          <p>Profesionālās ievirzes deju skola "Benefice"</p>
-        </div>
-        <div class="note">
-          <span class="eyebrow">Vadītāja asistente</span>
-          <p>Fizisko aktivitāšu klīnika "4x4"</p>
-        </div>
-      </div>
+      <blockquote>
+        <p>Behind every health message is a <em>real person</em> - I never forget that.</p>
+        <footer class="signature">Eleonora</footer>
+      </blockquote>
     </div>
   </section>
 
-  <section id="darbi">
+  <section id="darbi" class="projects">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Projekti</h2>
-      </div>
-
-      <div class="case-list">
-
-        <article class="case-block reveal">
-          <div class="case-media frame" role="button" tabindex="0" data-full="assets/images/infografika-1.png">
-            <img src="assets/images/infografika-1.png" alt="Infografika 'Neiropātija': simptomi un cēloņi" loading="lazy" />
-          </div>
-          <div class="case-content">
-            <span class="case-num">01</span>
-            <h3>Infografikas</h3>
-            <p>Informatīvi vizuāļi, kas sarežģītu informāciju padara skaidru un viegli uztveramu.</p>
-            <div class="case-thumbs">
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/infografika-2.png">
-                <img src="assets/images/infografika-2.png" alt="Infografika 'Limfostāze ir hronisks stāvoklis': stadijas, faktori un mazināšanas stratēģija" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-block reveal">
-          <div class="case-media frame" role="button" tabindex="0" data-full="assets/images/coming-soon-poster.png">
-            <img src="assets/images/coming-soon-poster.png" alt="Pasākuma plakāts 'Sastopi savu spēku! Transformējošs vakars sievietēm'" loading="lazy" />
-          </div>
-          <div class="case-content">
-            <span class="case-num">02</span>
-            <h3>Plakāti</h3>
-            <p>Pasākumu un kampaņu plakāti, kas piesaista uzmanību un nes vēstījumu tālāk.</p>
-            <div class="case-thumbs">
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/atplauksti-marupe.jpg">
-                <img src="assets/images/atplauksti-marupe.jpg" alt="Pasākuma plakāts 'Atplauksti sievišķībā'" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-block reveal">
-          <div class="case-media frame" role="button" tabindex="0" data-full="assets/images/linkedin-content-fire.png">
-            <img src="assets/images/linkedin-content-fire.png" alt="LinkedIn vizuālis: Content is fire, social media is gasoline" loading="lazy" />
-          </div>
-          <div class="case-content">
-            <span class="case-num">03</span>
-            <h3>Sociālo tīklu vizuāļi</h3>
-            <p>Vizuāļi un veidnes sociālajiem tīkliem, kas strādā gan zīmolam, gan auditorijai.</p>
-            <div class="case-thumbs">
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/linkedin-roles.png">
-                <img src="assets/images/linkedin-roles.png" alt="LinkedIn vizuālis: Some roles don't just teach you skills. They shape how you see people." loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/coming-soon.png">
-                <img src="assets/images/coming-soon.png" alt="Pasākuma lektoru prezentācija: Elizabete Tauriņa un Egija Troščenko" loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/atplauksti-atsauksmes.png">
-                <img src="assets/images/atplauksti-atsauksmes.png" alt="Atsauksmes par pasākumu 'Atplauksti sievišķībā'" loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/atplauksti-jolanta.jpg">
-                <img src="assets/images/atplauksti-jolanta.jpg" alt="Pasākuma 'Atplauksti sievišķībā' lektores prezentācija: Jolanta" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-block reveal">
-          <div class="case-media frame" role="button" tabindex="0" data-full="assets/images/fotografija-4.jpg">
-            <img src="assets/images/fotografija-4.jpg" alt="Dejotāji pie stieņa ar paceltām rokām" loading="lazy" />
-          </div>
-          <div class="case-content">
-            <span class="case-num">04</span>
-            <h3>Fotogrāfija</h3>
-            <p>Mirkļi, detaļas un perspektīvas, kas piesaista uzmanību.</p>
-            <div class="case-thumbs">
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-2.jpg">
-                <img src="assets/images/fotografija-2.jpg" alt="Kāju līnijas tuvplāns studijā" loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-3.jpg">
-                <img src="assets/images/fotografija-3.jpg" alt="Kakla un pleca līnija, tuvplāns" loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-6.jpg">
-                <img src="assets/images/fotografija-6.jpg" alt="Dejotāji kustībā deju zālē" loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-5.jpg">
-                <img src="assets/images/fotografija-5.jpg" alt="Izplūdušas kājas deju zālē" loading="lazy" />
-              </div>
-              <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-1.jpg">
-                <img src="assets/images/fotografija-1.jpg" alt="Amsterdamas iela ar garāmbraucošām mašīnām, melnbalts kadrs" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
+      <h2 class="display">Projekti</h2>
     </div>
+
+    <article class="case-block">
+      <div class="case-text">
+        <span class="case-num">01</span>
+        <h3>Infografikas</h3>
+        <p>Informatīvi vizuāļi, kas sarežģītu informāciju padara skaidru un viegli uztveramu.</p>
+      </div>
+      <div class="strip">
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/infografika-1.png"><img src="assets/images/infografika-1.png" alt="Infografika 'Neiropātija': simptomi un cēloņi" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/infografika-2.png"><img src="assets/images/infografika-2.png" alt="Infografika 'Limfostāze ir hronisks stāvoklis': stadijas, faktori un mazināšanas stratēģija" loading="lazy" /></div>
+      </div>
+    </article>
+
+    <article class="case-block">
+      <div class="case-text">
+        <span class="case-num">02</span>
+        <h3>Plakāti</h3>
+        <p>Pasākumu un kampaņu plakāti, kas piesaista uzmanību un nes vēstījumu tālāk.</p>
+      </div>
+      <div class="strip">
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/coming-soon-poster.png"><img src="assets/images/coming-soon-poster.png" alt="Pasākuma plakāts 'Sastopi savu spēku! Transformējošs vakars sievietēm'" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/atplauksti-marupe.jpg"><img src="assets/images/atplauksti-marupe.jpg" alt="Pasākuma plakāts 'Atplauksti sievišķībā'" loading="lazy" /></div>
+      </div>
+    </article>
+
+    <article class="case-block">
+      <div class="case-text">
+        <span class="case-num">03</span>
+        <h3>Sociālo tīklu vizuāļi</h3>
+        <p>Vizuāļi un veidnes sociālajiem tīkliem, kas strādā gan zīmolam, gan auditorijai.</p>
+      </div>
+      <div class="strip">
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/linkedin-content-fire.png"><img src="assets/images/linkedin-content-fire.png" alt="LinkedIn vizuālis: Content is fire, social media is gasoline" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/linkedin-roles.png"><img src="assets/images/linkedin-roles.png" alt="LinkedIn vizuālis: Some roles don't just teach you skills. They shape how you see people." loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/coming-soon.png"><img src="assets/images/coming-soon.png" alt="Pasākuma lektoru prezentācija: Elizabete Tauriņa un Egija Troščenko" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/atplauksti-atsauksmes.png"><img src="assets/images/atplauksti-atsauksmes.png" alt="Atsauksmes par pasākumu 'Atplauksti sievišķībā'" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/atplauksti-jolanta.jpg"><img src="assets/images/atplauksti-jolanta.jpg" alt="Pasākuma 'Atplauksti sievišķībā' lektores prezentācija: Jolanta" loading="lazy" /></div>
+      </div>
+    </article>
+
+    <article class="case-block">
+      <div class="case-text">
+        <span class="case-num">04</span>
+        <h3>Fotogrāfija</h3>
+        <p>Mirkļi, detaļas un perspektīvas, kas piesaista uzmanību.</p>
+      </div>
+      <div class="strip">
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-4.jpg"><img src="assets/images/fotografija-4.jpg" alt="Dejotāji pie stieņa ar paceltām rokām" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-2.jpg"><img src="assets/images/fotografija-2.jpg" alt="Kāju līnijas tuvplāns studijā" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-3.jpg"><img src="assets/images/fotografija-3.jpg" alt="Kakla un pleca līnija, tuvplāns" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-6.jpg"><img src="assets/images/fotografija-6.jpg" alt="Dejotāji kustībā deju zālē" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-5.jpg"><img src="assets/images/fotografija-5.jpg" alt="Izplūdušas kājas deju zālē" loading="lazy" /></div>
+        <div class="frame" role="button" tabindex="0" data-full="assets/images/fotografija-1.jpg"><img src="assets/images/fotografija-1.jpg" alt="Amsterdamas iela ar garāmbraucošām mašīnām, melnbalts kadrs" loading="lazy" /></div>
+      </div>
+    </article>
   </section>
 
-
-  <footer id="kontakti">
-    <div class="wrap">
-      <div class="footer-cta reveal">
-        <h2>Let's write the next <em>story</em> together.</h2>
-      </div>
-      <div class="footer-links reveal">
-        <a href="mailto:taubeeleonora@gmail.com">taubeeleonora@gmail.com</a>
-        <a href="https://linkedin.com/in/eleonorataube" target="_blank" rel="noopener">linkedin.com/in/eleonorataube</a>
-      </div>
-      <div class="footer-bottom">
-        <span>Eleonora Taube</span>
-        <span>Rīga, Latvija</span>
-      </div>
+  <footer id="kontakti" class="contact wrap">
+    <h2 class="contact-title">Let's write the next <em>story</em> together.</h2>
+    <div class="contact-links">
+      <a href="mailto:taubeeleonora@gmail.com">taubeeleonora@gmail.com</a>
+      <a href="https://linkedin.com/in/eleonorataube" target="_blank" rel="noopener">linkedin.com/in/eleonorataube</a>
+    </div>
+    <div class="contact-bottom">
+      <span>Eleonora Taube</span>
+      <span>Rīga, Latvija</span>
     </div>
   </footer>
 
 </main>
+
+<div class="cursor" aria-hidden="true">Skatīt</div>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lb-close" type="button" aria-label="Aizvērt">&times;</button>
@@ -269,6 +210,6 @@
   </figure>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
