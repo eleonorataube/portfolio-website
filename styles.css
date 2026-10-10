@@ -303,7 +303,7 @@ p{ margin:0; }
   line-height:1.05;
   letter-spacing:-0.04em;
 }
-.quote em{ font-style:normal; color:#e7a3ab; }
+.quote em{ font-style:normal; color:#e7a3ab; white-space:nowrap; }
 .signature{
   margin:clamp(28px,4vw,48px) 0 0;
   font-family:var(--hand); font-size:clamp(2.2rem,4vw,3.2rem);
