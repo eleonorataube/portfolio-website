@@ -93,18 +93,18 @@ p{ margin:0; }
 
 .hero-photo{
   position:absolute; top:0; right:0; bottom:0;
-  width:64%;
+  width:50%;
   /* long eased fade: the photo itself dissolves into the ink, no hard edge */
   -webkit-mask-image:linear-gradient(90deg,
-    transparent 0%, rgba(0,0,0,0.04) 10%, rgba(0,0,0,0.14) 20%, rgba(0,0,0,0.3) 30%,
-    rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.86) 60%, rgba(0,0,0,0.96) 70%, #000 80%);
+    transparent 0%, rgba(0,0,0,0.05) 12%, rgba(0,0,0,0.16) 24%, rgba(0,0,0,0.34) 36%,
+    rgba(0,0,0,0.56) 48%, rgba(0,0,0,0.76) 60%, rgba(0,0,0,0.9) 72%, #000 86%);
           mask-image:linear-gradient(90deg,
-    transparent 0%, rgba(0,0,0,0.04) 10%, rgba(0,0,0,0.14) 20%, rgba(0,0,0,0.3) 30%,
-    rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.86) 60%, rgba(0,0,0,0.96) 70%, #000 80%);
+    transparent 0%, rgba(0,0,0,0.05) 12%, rgba(0,0,0,0.16) 24%, rgba(0,0,0,0.34) 36%,
+    rgba(0,0,0,0.56) 48%, rgba(0,0,0,0.76) 60%, rgba(0,0,0,0.9) 72%, #000 86%);
 }
 .hero-photo img{
   width:100%; height:100%;
-  object-fit:cover; object-position:72% 50%;
+  object-fit:cover; object-position:70% 50%;
   opacity:0.78;
 }
 /* soft darkening at the bottom so the scroll mouse sits on calm ground */
