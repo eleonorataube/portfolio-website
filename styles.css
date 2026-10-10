@@ -367,7 +367,7 @@ p{ margin:0; }
   grid-column:2;
   position:relative;
   height:20px;
-  margin:3px var(--gutter) 0 0;
+  margin:-3px var(--gutter) 0 0;
   cursor:pointer;
   touch-action:none;
 }
@@ -397,7 +397,7 @@ p{ margin:0; }
   .case-text{ padding-inline:var(--gutter); }
   .strip{ padding-left:var(--gutter); }
   .strip .frame{ height:62vw; max-height:340px; }
-  .strip-progress{ grid-column:1; margin:-21px var(--gutter) 0; }
+  .strip-progress{ grid-column:1; margin:-27px var(--gutter) 0; }
   /* on phones swiping is natural - keep the line, drop the buttons */
   .strip-nav{ display:none; }
 }
