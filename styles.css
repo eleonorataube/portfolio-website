@@ -326,7 +326,6 @@ p{ margin:0; }
 
 .case-text{ grid-row:1 / span 2; }
 .strip{ align-self:start; }
-.case-num{ display:block; font-size:0.9rem; font-weight:500; color:var(--accent); margin-bottom:10px; }
 .case-text h3{ font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,2.6vw,2.4rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:16px; }
 .case-text p{ color:var(--muted); font-size:0.98rem; max-width:34ch; }
 
@@ -335,14 +334,12 @@ p{ margin:0; }
   display:flex; gap:clamp(12px,1.4vw,18px);
   overflow-x:auto;
   padding-right:var(--gutter);
-  scroll-snap-type:x proximity;
   scrollbar-width:none; /* the red progress line replaces the native bar */
 }
 .strip::-webkit-scrollbar{ display:none; }
 .strip .frame{
   flex:0 0 auto;
   height:clamp(240px,30vw,420px);
-  scroll-snap-align:start;
   background:var(--paper-deep);
   cursor:pointer;
   overflow:hidden;
@@ -390,7 +387,7 @@ p{ margin:0; }
   .case-block:not(.no-scroll) .strip{ cursor:grab; }
   .strip.dragging, .strip.dragging .frame{ cursor:grabbing; }
 }
-.strip.dragging{ scroll-snap-type:none; user-select:none; }
+.strip.dragging{ user-select:none; }
 .strip.dragging .frame img{ transform:none; }
 .case-block.no-scroll .strip-nav, .case-block.no-scroll .strip-progress{ display:none; }
 
@@ -398,7 +395,7 @@ p{ margin:0; }
   .case-block{ grid-template-columns:1fr; grid-template-rows:none; row-gap:24px; padding-left:0; }
   .case-text{ grid-row:auto; }
   .case-text{ padding-inline:var(--gutter); }
-  .strip{ padding-left:var(--gutter); scroll-padding-left:var(--gutter); }
+  .strip{ padding-left:var(--gutter); }
   .strip .frame{ height:62vw; max-height:340px; }
   .strip-progress{ grid-column:1; margin:-21px var(--gutter) 0; }
   /* on phones swiping is natural - keep the line, drop the buttons */
