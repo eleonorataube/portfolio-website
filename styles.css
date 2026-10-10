@@ -411,7 +411,7 @@ p{ margin:0; }
     width:88px; height:88px; margin:-44px 0 0 -44px;
     border-radius:50%;
     background:var(--accent); color:var(--paper);
-    font-size:0.85rem; letter-spacing:0.02em;
+    font-family:var(--sans); font-weight:600; font-size:0.95rem; letter-spacing:0.005em;
     pointer-events:none;
     transform:translate3d(-200px,-200px,0) scale(0);
     transition:transform .25s cubic-bezier(.2,.7,.2,1);
