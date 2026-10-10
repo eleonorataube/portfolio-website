@@ -281,7 +281,7 @@ p{ margin:0; }
 }
 .quote em{ font-style:italic; color:#e7a3ab; }
 .signature{
-  margin-top:clamp(28px,4vw,48px);
+  margin:clamp(28px,4vw,48px) 0 0;
   font-family:var(--hand); font-size:clamp(2.2rem,4vw,3.2rem);
   color:var(--paper);
   transform:rotate(-4deg);
@@ -290,7 +290,16 @@ p{ margin:0; }
 
 /* ---------- PROJECTS ---------- */
 .projects{ padding-block:clamp(96px,14vw,180px) clamp(40px,6vw,80px); }
-.projects .display{ margin-bottom:clamp(48px,7vw,96px); }
+.projects-head{
+  display:flex; align-items:flex-end; flex-wrap:wrap; gap:8px clamp(20px,4vw,48px);
+  margin-bottom:clamp(48px,7vw,96px);
+}
+.hand-note{
+  font-family:var(--hand); font-size:clamp(1.5rem,2.2vw,1.9rem); line-height:1;
+  color:var(--accent);
+  transform:rotate(-5deg);
+  padding-bottom:0.6em;
+}
 .case-block{
   display:grid;
   grid-template-columns:minmax(220px,320px) 1fr;
