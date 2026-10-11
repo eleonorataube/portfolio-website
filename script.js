@@ -1,3 +1,24 @@
+// Always open at the front page: don't restore an old scroll position, and
+// drop any "#section" left in the address from an earlier menu click.
+(function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+
+  // In-page links scroll smoothly without writing "#section" into the address
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    var target = id ? document.getElementById(id) : null;
+    if (!target && id !== 'top') return;
+    e.preventDefault();
+    if (id === 'top' || !target) window.scrollTo({ top: 0, behavior: still ? 'auto' : 'smooth' });
+    else target.scrollIntoView({ behavior: still ? 'auto' : 'smooth' });
+  });
+})();
+
 // Lightbox for the "Projekti" gallery — click (or Enter/Space) a frame to
 // see the full image; arrows, arrow keys or a swipe step through the other
 // photos of the same project. Escape, the close button, or a click outside
